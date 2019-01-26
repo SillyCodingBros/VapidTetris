@@ -12,7 +12,7 @@ typedef struct {
 /* fonction de update.c */
 int* detectRaw(container* grid);
 char fullRaw(container* grid, int index);
-void deleteRaw(container* grid, int* indexList);
+void deleteRow(container* grid, int* indexList);
 int* detectCol(container* grid);
 char fullCol(container* grid, int index);
 void deleteCol(container* grid, int* indexList);
