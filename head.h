@@ -25,7 +25,15 @@ void update(container* grid);
 
 /* fonction de container.c */
 void initContainer(int width, int height, container* item);
+
 int randomPiece();
+void createU();
+void createL1();
+void createL2();
+void createCross();
+void createDot();
+void createLine();
+
 void deleteContainer(container* item);
 //a completer avec les fonctions de generation pour chaque piece
 
