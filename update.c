@@ -1,3 +1,66 @@
+#include "head.h"
+
+//Fonction row
+int* detectRow(container* grid){
+
+	int *index, actual, max_len, max_size, i;
+
+	//Sauvegarde
+	max_len = grid->len;
+	max_size = grid->size;
+
+	//Index
+	actual = 1;
+	index = malloc((max_size/max_len + 1)*sizeof(int));
+
+	for(i=0; i<max_size; i += max_len){
+		if(fullrow(grid, i)){
+			index[actual] = i;
+			++actual;
+		}
+	}
+	index[0] = actual;
+
+	return realloc(index, actual);
+}
+
+char fullrow(container* grid, int index){
+
+	int max_len, j;
+	char* save_data;
+
+	save_data = grid->data;
+	max_len = grid->len;
+
+	for(j=index; j< index + max_len; ++j){
+		if(save_data[j] != 1) break;
+	}
+	if(j == index + max_len){
+		return 1;
+	}
+	return 0;
+}
+
+void deleteRow(container* grid, int* index_list){
+
+	int actual, max_len, max_size, i, j;
+	char *save_data;
+
+	//Sauvegarde
+	save_data = grid->data;
+	max_len = grid->len;
+
+	max_size = index_list[0];
+	for(i=1; i<max_size; ++i){
+		actual = index_list[i];
+		for(j=actual; j< actual + max_len; ++j){
+			save_data[j] = 0;
+		}
+	}
+
+}
+
+
 
 //Fonction Col
 int* detectCol(container* grid){
@@ -57,67 +120,6 @@ void deleteCol(container* grid, int* index_list){
 	for(i=1; i<max_size; ++i){
 		actual = index_list[i];
 		for(j=actual; j< max_size1; j += max_len){
-			save_data[j] = 0;
-		}
-	}
-
-}
-
-
-//Fonction row
-int* detectRow(container* grid){
-
-	int *index, actual, max_len, max_size, i;
-
-	//Sauvegarde
-	max_len = grid->len;
-	max_size = grid->size;
-
-	//Index
-	actual = 1;
-	index = malloc((max_size/max_len + 1)*sizeof(int));
-
-	for(i=0; i<max_size; i += max_len){
-		if(fullrow(grid, i)){
-			index[actual] = i;
-			++actual;
-		}
-	}
-	index[0] = actual;
-
-	return realloc(index, actual);
-}
-
-char fullrow(container* grid, int index){
-
-	int max_len, j;
-	char* save_data;
-
-	save_data = grid->data;
-	max_len = grid->len;
-
-	for(j=index; j< index + max_len; ++j){
-		if(save_data[j] != 1) break;
-	}
-	if(j == index + max_len){
-		return 1;
-	}
-	return 0;
-}
-
-void deleteRow(container* grid, int* index_list){
-
-	int actual, max_len, max_size, i, j;
-	char *save_data;
-
-	//Sauvegarde
-	save_data = grid->data;
-	max_len = grid->len;
-
-	max_size = index_list[0];
-	for(i=1; i<max_size; ++i){
-		actual = index_list[i];
-		for(j=actual; j< actual + max_len; ++j){
 			save_data[j] = 0;
 		}
 	}
