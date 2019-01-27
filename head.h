@@ -1,5 +1,9 @@
 /* truc du head.h */
+/* -------------- Include ---------- */
+#include <time.h>
+#include <stdlib.h>
 
+/* -------------- Define ----------- */
 #define WIDTH 20
 #define HEIGHT 25
 
