@@ -20,7 +20,7 @@ void gravity(container* grid, int* index_list_line, int* index_list_col);
 void update(container* grid);
 
 /* fonction de container.c */
-void initContainer(int width, int size, container* item);
+void initContainer(int width, int height, container* item);
 int randomPiece();
 void deleteContainer(container* item);
 //a completer avec les fonctions de generation pour chaque piece
