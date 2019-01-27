@@ -24,7 +24,7 @@ int* detectRow(container* grid){
 	return realloc(index, actual);
 }
 
-char fullrow(container* grid, int index){
+char fullRow(container* grid, int index){
 
 	int max_len, j;
 	char* save_data;

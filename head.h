@@ -10,8 +10,8 @@ typedef struct {
 }container;
 
 /* fonction de update.c */
-int* detectRaw(container* grid);
-char fullRaw(container* grid, int index);
+int* detectRow(container* grid);
+char fullRow(container* grid, int index);
 void deleteRow(container* grid, int* indexList);
 int* detectCol(container* grid);
 char fullCol(container* grid, int index);
