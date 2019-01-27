@@ -24,6 +24,7 @@ void gravity(container* grid, int* index_list_line, int* index_list_col);
 void update(container* grid);
 
 /* fonction de container.c */
+//ordre d'appel : randomPiece -> createX -> initContainer
 void initContainer(int width, int height, container* item);
 
 int randomPiece();
