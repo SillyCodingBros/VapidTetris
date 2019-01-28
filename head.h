@@ -25,9 +25,11 @@ void gravity(container* grid, int* index_list_line, int* index_list_col);
 void update(container* grid);
 
 /* fonction de container.c */
-//ordre d'appel : randomPiece -> createX -> initContainer
-void initContainer(int width, int height, container* item);
 
+/* initialise la structure container à la taille spécifiée par width et height. Appellée par les créateurs de pièce et reserve l'espace mémoire 
+pour la case. */ 
+void initContainer(int width, int height, container* item);
+/* Génère un entier aléatoire. Celon le résultat obtenu, */
 container randomPiece();
 container createU();
 container createL1();
