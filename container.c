@@ -3,53 +3,66 @@
 void initContainer(int width, int height, container* item){
 	item.len = width;
 	item.size = width * height;
+	int data = malloc(item.size * sizeof(int));
 }
 
-void randomPiece(){
+container randomPiece(){
+	container piece;
 	srand(time(NULL));
 	int random = rand() % 5;
 	switch (random){
 		case 0 :
-			createU();
+			piece = createU();
+			return piece;
 		case 1 :
-			createL1();
+			piece = createL1();
+			return piece;
 		case 2 :
-			createL2();
+			piece = createL2();
+			return piece;
 		case 3 :
-			createCross();
+			piece = createCross();
+			return piece;
 		case 4:
-			createDot();
+			piece = createDot();
+			return piece;
 		case 5 :
-			createLine();
+			piece = createLine();
+			return piece;
+		default :
+			printf("Error : could not generate cooresponding piece for int : %d \n", random);
 	}
 }
 
-void createU(){
+container createU(){
 	container piece;
 	initContainer(3, 3, piece);
 	int data = {1, 0, 1,
 			    1, 0, 1,
 			    1, 1, 1 };
 	piece.data = data
+	return piece;
 }
 
-void createL1(){
+container createL1(){
 	container piece;
 	initContainer(3, 2, piece);
 	int data = {1, 0, 0,
 				1, 1, 1 };
 	piece.data = data;
+	return piece;
 }
 
-void createL2(){
+container createL2(){
 	container piece;
 	initContainer(3, 2, piece);
 	int data = {0, 0, 1,
 			    1, 1, 1 };
 	piece.data = data;
+	return piece;
 }
 
-void createCross(){
+container createCross(){
 	container piece;
 	initContainer(5, 5, piece);
 	int data = {0, 0, 1, 0, 0,
@@ -58,22 +71,25 @@ void createCross(){
 				0, 0, 1, 0, 0,
 				0, 0, 1, 0, 0 }
 	piece.data = data;
+	return piece;
 }
 
-void createDot(){
+container createDot(){
 	container piece;
 	initContainer(1, 1, piece);
 	int data = {1};
-	piece.data = data;
+	piece.data = data
+	return piece;
 }
 
-void createLine(){
+container createLine(){
 	container piece;
 	initContainer(1, 2, piece);
 	int data = {1, 1};
 	piece.data = data;
+	return piece;
 }
 
 void deleteContainer(container * item){
-	free(item);
+	free(item.data);
 }

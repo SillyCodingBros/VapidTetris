@@ -2,6 +2,7 @@
 /* -------------- Include ---------- */
 #include <time.h>
 #include <stdlib.h>
+#include <stdio.h>
 
 /* -------------- Define ----------- */
 #define WIDTH 20
@@ -27,13 +28,13 @@ void update(container* grid);
 //ordre d'appel : randomPiece -> createX -> initContainer
 void initContainer(int width, int height, container* item);
 
-int randomPiece();
-void createU();
-void createL1();
-void createL2();
-void createCross();
-void createDot();
-void createLine();
+container randomPiece();
+container createU();
+container createL1();
+container createL2();
+container createCross();
+container createDot();
+container createLine();
 
 void deleteContainer(container* item);
 //a completer avec les fonctions de generation pour chaque piece
