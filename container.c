@@ -1,15 +1,19 @@
 #include "head.h"
 
 void initContainer(int width, int height, container* item){
-	item.len = width;
-	item.size = width * height;
-	int data = malloc(item.size * sizeof(int));
+	item->len = width;
+	item->size = width * height;
+	item->data = malloc(item->size * sizeof(char));
+	for (int i = 0; i < item->size; ++i)
+	{
+		item->data[i] = 0;
+	}
 }
 
 container randomPiece(){
 	container piece;
 	srand(time(NULL));
-	int random = rand() % 5;
+	int random = rand() % 6;
 	switch (random){
 		case 0 :
 			piece = createU();
@@ -36,60 +40,84 @@ container randomPiece(){
 
 container createU(){
 	container piece;
-	initContainer(3, 3, piece);
-	int data = {1, 0, 1,
-			    1, 0, 1,
-			    1, 1, 1 };
-	piece.data = data
+	initContainer(3, 3, &piece);
+	piece.data[0] = 1;
+	piece.data[2] = 1;
+	piece.data[3] = 1;
+	piece.data[5] = 1;
+	piece.data[6] = 1;
+	piece.data[7] = 1;
+	piece.data[8] = 1;
 	return piece;
 }
 
 container createL1(){
 	container piece;
-	initContainer(3, 2, piece);
-	int data = {1, 0, 0,
-				1, 1, 1 };
-	piece.data = data;
+	initContainer(3, 2, &piece);
+	piece.data[0] = 1;
+	piece.data[3] = 1;
+	piece.data[4] = 1;
+	piece.data[5] = 1;
 	return piece;
 }
 
 container createL2(){
 	container piece;
-	initContainer(3, 2, piece);
-	int data = {0, 0, 1,
-			    1, 1, 1 };
-	piece.data = data;
+	initContainer(3, 2, &piece);
+	piece.data[2] = 1;
+	piece.data[3] = 1;
+	piece.data[4] = 1;
+	piece.data[5] = 1;	
 	return piece;
 }
 
 container createCross(){
 	container piece;
-	initContainer(5, 5, piece);
-	int data = {0, 0, 1, 0, 0,
-				0, 0, 1, 0, 0,
-				1, 1, 1, 1, 1, 
-				0, 0, 1, 0, 0,
-				0, 0, 1, 0, 0 }
-	piece.data = data;
+	initContainer(5, 5, &piece);
+	piece.data[2] = 1;
+	piece.data[7] = 1;
+	piece.data[10] = 1;
+	piece.data[11] = 1;
+	piece.data[12] = 1;
+	piece.data[13] = 1;
+	piece.data[14] = 1;
+	piece.data[17] = 1;
+	piece.data[22] = 1;
+	piece.data[24] = 0;
+	printf("lol\n");
+
 	return piece;
 }
 
 container createDot(){
 	container piece;
-	initContainer(1, 1, piece);
-	int data = {1};
-	piece.data = data
+	initContainer(1, 1, &piece);
+	piece.data[0] = 1;
 	return piece;
 }
 
 container createLine(){
 	container piece;
-	initContainer(1, 2, piece);
-	int data = {1, 1};
-	piece.data = data;
+	initContainer(1, 2, &piece);
+	piece.data[0] = 1;
+	piece.data[1] = 1;
 	return piece;
 }
 
 void deleteContainer(container * item){
-	free(item.data);
+	free(item->data);
+}
+
+int main (){
+	container test = randomPiece();
+	for (int i = 0; i < test.size; ++i)
+	{
+		if (i % test.len == 0)
+		{
+			printf("\n");
+		}
+		printf("%d",test.data[i]);
+		
+	}
+	printf("\n");
 }
