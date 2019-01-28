@@ -84,8 +84,6 @@ container createCross(){
 	piece.data[17] = 1;
 	piece.data[22] = 1;
 	piece.data[24] = 0;
-	printf("lol\n");
-
 	return piece;
 }
 
