@@ -32,6 +32,17 @@ void display(container* grid){
     printf("\n");
 }
 
-void seize() {
-    /* code */
+void seize(container *grid, container *piece) {
+    int x = 0, y = 0, done = 1;
+    do {
+        printf("coord = ");
+        scanf("%d , %d", &x, &y);
+        if (checkCollision(grid, piece, x, y)) {
+            printf("emplacement invalide\n");
+        }else{
+            done = 0;
+        }
+    } while(done);
+
+    place(grid, piece, x, y);
 }

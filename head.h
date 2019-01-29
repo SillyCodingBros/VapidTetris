@@ -34,8 +34,8 @@ pour la case. Lors de l'initialisation, data est rempli de 0 (cases vide) */
 void initContainer(int width, int height, container* item);
 /* Génère un entier aléatoire. Celon le résultat obtenu, lance la fonction créant la pièce correspondante puis la retourne */
 container randomPiece();
-/* Génère la pièce demandée en créant une pièce à la taille nécessaire puis remplis les cases avec des 1 (case pleine) pour donner forme a la pièce
-* Une fois formée, cette pièce est renvoyée à randomPiece. */
+/* Génère la pièce demandée en créant une pièce à la taille nécessaire puis remplis les cases avec des 1 (case pleine) pour donner forme a la pièce.
+Une fois formée, cette pièce est renvoyée à randomPiece. */
 container createU();
 container createL1();
 container createL2();
@@ -49,7 +49,7 @@ void place(container * grid, container * piece, int x, int y);
 
 /* fonction de utilisateur.c */
 void display(container* grid);
+void seize(container *grid, container *piece);
 void rotate(container* item);
-//a completer avec les fonctions de placement et de collision
 
 #endif
