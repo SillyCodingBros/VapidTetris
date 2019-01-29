@@ -44,7 +44,8 @@ container createDot();
 container createLine();
 /* free le data de la pièce passée en argument */
 void deleteContainer(container* item);
-//a completer avec les fonctions de generation pour chaque piece
+int checkCollision(container * grid, container * piece, int x, int y);
+void place(container * grid, container * piece, int x, int y);
 
 /* fonction de utilisateur.c */
 void display(container* grid);

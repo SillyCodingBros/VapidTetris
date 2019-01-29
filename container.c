@@ -105,3 +105,24 @@ container createLine(){
 void deleteContainer(container * item){
 	free(item->data);
 }
+
+int checkCollision(container * grid, container * piece, int x, int y){
+	for (int i = 0; i < piece->size/piece->len; i++) {
+		for (int j = 0; j < piece->len; j++) {
+			if (grid->data[((i+y)*grid->len)+j+x] && piece->data[(i*piece->len)+j]) {
+				return 1;
+			}
+		}
+	}
+	return 0;
+}
+
+void place(container * grid, container * piece, int x, int y) {
+	for (int i = 0; i < piece->size/piece->len; i++) {
+		for (int j = 0; j < piece->len; j++) {
+			if (piece->data[(i*piece->len)+j] == 1) {
+				grid->data[((i+y)*grid->len)+j+x] = piece->data[(i*piece->len)+j];
+			}
+		}
+	}
+}
