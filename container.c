@@ -67,7 +67,7 @@ container createL2(){
 	piece.data[2] = 1;
 	piece.data[3] = 1;
 	piece.data[4] = 1;
-	piece.data[5] = 1;	
+	piece.data[5] = 1;
 	return piece;
 }
 
@@ -104,18 +104,4 @@ container createLine(){
 
 void deleteContainer(container * item){
 	free(item->data);
-}
-
-int main (){
-	container test = randomPiece();
-	for (int i = 0; i < test.size; ++i)
-	{
-		if (i % test.len == 0)
-		{
-			printf("\n");
-		}
-		printf("%d",test.data[i]);
-		
-	}
-	printf("\n");
 }
