@@ -1,7 +1,7 @@
 #include "head.h"
 
 void display(container* grid){
-    char *toShow = "30m";
+    char *toShow = "36m";
     int i;
     for (i = 0; i < grid->len+2; i++) {
         printf("-");
