@@ -18,13 +18,22 @@ typedef struct {
 }container;
 
 /* fonction de update.c */
+//Renvoie un tableau contenant tout les index de lignes pleines
 int* detectRow(container* grid);
+//detecte si une ligne est pleine
 char fullRow(container* grid, int index);
+//Supprime les lignes contenue dans le tableau indexList
 void deleteRow(container* grid, int* indexList);
+//Renvoie un tableau contenant tout les index de colonnes pleines
 int* detectCol(container* grid);
+//detecte si une colonne est pleine
 char fullCol(container* grid, int index);
+//Supprime les colonnes contenue dans le tableau indexList
 void deleteCol(container* grid, int* indexList);
+//S'occupe de replacer toute les cases de la grille selon les index qui ont été supprimé
 void gravity(container* grid, int* index_list_line, int* index_list_col);
+
+/* Fonction qui s'occupe de tout les appelles de detection, de suppression et de replacer les grilles */
 void update(container* grid);
 
 /* fonction de container.c */
