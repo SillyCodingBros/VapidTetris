@@ -35,6 +35,7 @@ container randomPiece(){
 			return piece;
 		default :
 			printf("Error : could not generate cooresponding piece for int : %d \n", random);
+			exit(0);
 	}
 }
 
@@ -67,7 +68,7 @@ container createL2(){
 	piece.data[2] = 1;
 	piece.data[3] = 1;
 	piece.data[4] = 1;
-	piece.data[5] = 1;	
+	piece.data[5] = 1;
 	return piece;
 }
 
@@ -106,16 +107,26 @@ void deleteContainer(container * item){
 	free(item->data);
 }
 
-int main (){
-	container test = randomPiece();
-	for (int i = 0; i < test.size; ++i)
-	{
-		if (i % test.len == 0)
-		{
-			printf("\n");
+int checkCollision(container * grid, container * piece, int x, int y){
+	for (int i = 0; i < piece->size/piece->len; i++) {
+		for (int j = 0; j < piece->len; j++) {
+			if (i+y < 0 || i+y >= (grid->size/grid->len) || j+x < 0 || j+x >= grid->len) {
+				return 1;
+			}
+			if (grid->data[((i+y)*grid->len)+j+x] && piece->data[(i*piece->len)+j]) {
+				return 1;
+			}
 		}
-		printf("%d",test.data[i]);
-		
 	}
-	printf("\n");
+	return 0;
+}
+
+void place(container * grid, container * piece, int x, int y) {
+	for (int i = 0; i < piece->size/piece->len; i++) {
+		for (int j = 0; j < piece->len; j++) {
+			if (piece->data[(i*piece->len)+j] == 1) {
+				grid->data[((i+y)*grid->len)+j+x] = piece->data[(i*piece->len)+j];
+			}
+		}
+	}
 }
