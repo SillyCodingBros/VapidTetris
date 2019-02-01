@@ -39,15 +39,15 @@ void update(container* grid);
 /* fonction de container.c */
 
 /* initialise la structure container à la taille spécifiée par width et height.
-   Appellée par les créateurs de pièce et reserve l'espace mémoire pour la 
+   Appellée par les créateurs de pièce et reserve l'espace mémoire pour la
    case. Lors de l'initialisation, data est rempli de 0 (cases vide) */
 void initContainer(int width, int height, container* item);
 
-/* Génère un entier aléatoire. Celon le résultat obtenu, lance la fonction 
+/* Génère un entier aléatoire. Celon le résultat obtenu, lance la fonction
    créant la pièce correspondante puis la retourne */
 container randomPiece();
 
-/* Génère la pièce demandée en créant une pièce à la taille nécessaire puis 
+/* Génère la pièce demandée en créant une pièce à la taille nécessaire puis
    remplis les cases avec des 1 (case pleine) pour donner forme a la pièce.
    Une fois formée, cette pièce est renvoyée à randomPiece. */
 
@@ -63,7 +63,7 @@ void deleteContainer(container* item);
 int checkCollision(container * grid, container * piece, int x, int y);
 void place(container * grid, container * piece, int x, int y);
 
-/* fonction de utilisateur.c */
+/* fonction de user.c */
 void display(container* grid);
 void seize(container *grid, container *piece);
 void rotate(container* item);

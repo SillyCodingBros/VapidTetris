@@ -2,6 +2,10 @@
 
 int main(int argc, char const *argv[])
 {
-	/* code */
+	container playGrid;
+	initContainer(20,24,&playGrid);
+	while(1){
+		display(&playGrid);
+	}
 	return 0;
 }
