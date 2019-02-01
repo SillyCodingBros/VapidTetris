@@ -31,7 +31,7 @@ void rotate_180(container *piece)
 	free(tmp);	
 }
 
-
+/*
 container rotate(container piece,int L){
 	switch(piece.type){
 		case 1:
@@ -71,5 +71,5 @@ container rotate(container piece,int L){
 				return piece;
 	}
 	}
-
+*/
 

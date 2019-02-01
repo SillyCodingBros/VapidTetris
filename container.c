@@ -35,6 +35,7 @@ container randomPiece(){
 			return piece;
 		default :
 			printf("Error : could not generate cooresponding piece for int : %d \n", random);
+			exit(0);
 	}
 }
 
