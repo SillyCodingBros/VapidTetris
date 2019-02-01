@@ -36,11 +36,9 @@ void initContainer(int width, int height, container* item);
 /* Génère un entier aléatoire. Celon le résultat obtenu, lance la fonction créant la pièce correspondante puis la retourne */
 container randomPiece();
 
-<<<<<<< HEAD
 /* Génère la pièce demandée en créant une pièce à la taille nécessaire puis remplis les cases avec des 1 (case pleine) pour donner forme a la pièce.
 Une fois formée, cette pièce est renvoyée à randomPiece. */
 
->>>>>>> d7433a182d8c72ad1ca0d59017256e693d4b0099
 container createU();
 container createL1();
 container createL2();
@@ -52,7 +50,6 @@ container createLine();
 void deleteContainer(container* item);
 int checkCollision(container * grid, container * piece, int x, int y);
 void place(container * grid, container * piece, int x, int y);
->>>>>>> d7433a182d8c72ad1ca0d59017256e693d4b0099
 
 /* fonction de utilisateur.c */
 void display(container* grid);

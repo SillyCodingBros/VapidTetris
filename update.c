@@ -14,7 +14,7 @@ int* detectRow(container* grid){
 	index = malloc((max_size/max_len + 1)*sizeof(int));
 
 	for(i=0; i<max_size; i += max_len){
-		if(fullrow(grid, i)){
+		if(fullRow(grid, i)){
 			index[actual] = i;
 			++actual;
 		}
