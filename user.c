@@ -31,32 +31,19 @@ void display(container* grid){
     }
     printf("\n");
 }
-void rotate_360(container *piece)
-{   
-    //fait tourné la piece a 360
-    int i,j;
-    char*tmp=malloc(sizeof(char)*piece->width*piece->height);
-    for(i=0;i<piece->width;i++)
-        for(j=0;j<piece->height;j++)
-            tmp[i*piece->width+j]=piece->data[i+piece->width*j];
-
-    for(i=0;i<piece->width;i++)
-        for(j=0;j<piece->height;j++)
-            piece->data[i*piece->width+j]=tmp[i*piece->width+j];
-        
-    free(tmp);  
-}
 
 void rotate_180(container *piece)
 {   
-    int i,j;
-    char * tmp=malloc(sizeof(char)*piece->width*piece->height);
-    for(i=0;i<piece->width;i++)
-        for(j=0;j<piece->height;j++)
-            tmp[i*piece->width+j]=piece->data[i+piece->width*j];
+    int i,j,width,height;
+    width=piece->size/piece->len;
+    height=piece->len;
+    char * tmp=malloc(sizeof(char)*width*height);
+    for(i=0;i<width;i++)
+        for(j=0;j<height;j++)
+            tmp[i*width+j]=piece->data[i+width*j];
     
-    for(i=0;i<piece->width;i++)
-        for(j=0;j<piece->height;j++)
-            piece->data[i*piece->width+j]=tmp[i*piece->width+j];
+    for(i=0;i<width;i++)
+        for(j=0;j<height;j++)
+            piece->data[i*width+j]=tmp[i*width+j];
     free(tmp);  
 }
