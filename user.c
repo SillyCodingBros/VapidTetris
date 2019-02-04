@@ -3,6 +3,7 @@
 void display(container* grid){
     char *toShow = "36m";
     int i;
+    
     for (i = 0; i < grid->len+2; i++) {
         printf("-");
     }
@@ -10,7 +11,7 @@ void display(container* grid){
 
     for (i = 0; i < grid->size; i++) {
         if (i % grid->len == 0 && i != 0) {
-            printf("|\n|");
+            printf("|%d\n|", (i/grid->len)-1);
         }
 
         switch (grid->data[i]) {
@@ -25,7 +26,7 @@ void display(container* grid){
             printf(" ");
         }
     }
-    printf("|\n");
+    printf("|%d\n",i/grid->len);
     for (i = 0; i < grid->len+2; i++) {
         printf("-");
     }

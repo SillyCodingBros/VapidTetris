@@ -1,5 +1,6 @@
 # Source du Makefile : https://www.cs.swarthmore.edu/~newhall/unixhelp/howto_makefiles.html#using
-# 'make'        build executable files 'client' and 'server'
+
+# 'make'        build executable file 'game.out'
 # 'make clean'  removes all .o and executable files
 
 # define the C compiler to use
