@@ -129,7 +129,7 @@ void deleteCol(container* grid, int* index_list){
 
 void gravity(container* grid, int* index_list_row, int* index_list_col){
 
-	int actual, max_len, max_size, save_size, save_index, i, j, k;
+	int max_len, max_size, save_size, save_index, i, j, k;
 	char *save_data;
 
 	//Save
