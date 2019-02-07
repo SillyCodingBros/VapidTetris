@@ -3,7 +3,7 @@
 void display(container* grid){
     char *toShow = "36m";
     int i;
-    
+
     for (i = 0; i < grid->len+2; i++) {
         printf("-");
     }
@@ -34,7 +34,7 @@ void display(container* grid){
 }
 
 void rotate_180(container *piece)
-{   
+{
     int i,j,width,height;
     width=piece->size/piece->len;
     height=piece->len;
@@ -42,15 +42,15 @@ void rotate_180(container *piece)
     for(i=0;i<width;i++)
         for(j=0;j<height;j++)
             tmp[i*width+j]=piece->data[i+width*j];
-    
+
     for(i=0;i<width;i++)
         for(j=0;j<height;j++)
             piece->data[i*width+j]=tmp[i*width+j];
-    free(tmp);  
+    free(tmp);
 }
 
 void rotate_90(container *piece)
-{   
+{
     int i,j,width,height;
     width=piece->size/piece->len;
     height=piece->len;
@@ -58,15 +58,15 @@ void rotate_90(container *piece)
     for(i=0;i<width;i++)
         for(j=0;j<height;j++)
           if(j== 0)
-                tmp[i*width+j]=piece->data[width*(width-1)+i]
-            
-            else if (j>0  && j <width) 
-                tmp[i*width+j]=piece->data[width*j+i]
-            else if(j=== width)
+                tmp[i*width+j]=piece->data[width*(width-1)+i];
+
+            else if (j>0  && j <width)
+                tmp[i*width+j]=piece->data[width*j+i];
+            else if(j == width)
                      tmp[i*width+j]=piece->data [width-i];
 
     for(i=0;i<width;i++)
         for(j=0;j<height;j++)
             piece->data[i*width+j]=tmp[i*width+j];
-    free(tmp);  
+    free(tmp);
 }
