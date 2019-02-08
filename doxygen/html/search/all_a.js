@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['r',['r',['../structcell.html#a8cefee0153ea06b2465c1142c467b3e0',1,'cell']]],
   ['randompiece',['randomPiece',['../container_8c.html#aae1449e449d2f69b52594cccb1dc1e42',1,'randomPiece():&#160;container.c'],['../head_8h.html#aae1449e449d2f69b52594cccb1dc1e42',1,'randomPiece():&#160;container.c']]],
   ['readme_2emd',['README.md',['../README_8md.html',1,'']]],
   ['rotate_5f180',['rotate_180',['../head_8h.html#afbdf40ca68538464d0df29d9b2a77366',1,'rotate_180(container *piece):&#160;user.c'],['../user_8c.html#afbdf40ca68538464d0df29d9b2a77366',1,'rotate_180(container *piece):&#160;user.c']]],

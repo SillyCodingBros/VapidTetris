@@ -11,8 +11,7 @@ Include dependency graph for head.\+h\+:\nopagebreak
 \includegraphics[width=322pt]{head_8h__incl}
 \end{center}
 \end{figure}
-This graph shows which files directly or indirectly include this file\+:
-\nopagebreak
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -35,21 +34,21 @@ struct \hyperlink{structcontainer}{container}
 \begin{DoxyCompactItemize}
 \item 
 int $\ast$ \hyperlink{head_8h_af9526652ed9443df3955c6cac0fe12c7}{detect\+Row} (\hyperlink{structcontainer}{container} $\ast$grid)
-\item 
+\begin{DoxyCompactList}\small\item\em Renvoie un tableau contenant tout les index de lignes pleines. \end{DoxyCompactList}\item 
 char \hyperlink{head_8h_a35c79938c8ccc4683d509620aa6e15af}{full\+Row} (\hyperlink{structcontainer}{container} $\ast$grid, int index)
-\item 
+\begin{DoxyCompactList}\small\item\em detecte si une ligne est pleine \end{DoxyCompactList}\item 
 void \hyperlink{head_8h_a1b4ff27dd8eca8ec63460b424310d541}{delete\+Row} (\hyperlink{structcontainer}{container} $\ast$grid, int $\ast$index\+List)
-\item 
+\begin{DoxyCompactList}\small\item\em Supprime les lignes contenue dans le tableau index\+List. \end{DoxyCompactList}\item 
 int $\ast$ \hyperlink{head_8h_a0e35a2936fc69af30890ce30a082b594}{detect\+Col} (\hyperlink{structcontainer}{container} $\ast$grid)
-\item 
+\begin{DoxyCompactList}\small\item\em Renvoie un tableau contenant tout les index de colonnes pleines. \end{DoxyCompactList}\item 
 char \hyperlink{head_8h_aebb74ac9ba3f8c734beba4617a6bf439}{full\+Col} (\hyperlink{structcontainer}{container} $\ast$grid, int index)
-\item 
+\begin{DoxyCompactList}\small\item\em detecte si une colonne est pleine \end{DoxyCompactList}\item 
 void \hyperlink{head_8h_a7bf753ec2f6d5d89d3cfbce8d704428f}{delete\+Col} (\hyperlink{structcontainer}{container} $\ast$grid, int $\ast$index\+List)
-\item 
+\begin{DoxyCompactList}\small\item\em Supprime les colonnes contenue dans le tableau index\+List. \end{DoxyCompactList}\item 
 void \hyperlink{head_8h_afdd0072ee83eaeca8b99941e73bf2c8e}{gravity} (\hyperlink{structcontainer}{container} $\ast$grid, int $\ast$index\+\_\+list\+\_\+line, int $\ast$index\+\_\+list\+\_\+col)
-\item 
+\begin{DoxyCompactList}\small\item\em S\textquotesingle{}occupe de replacer toute les cases de la grille selon les index qui ont été supprimé \end{DoxyCompactList}\item 
 void \hyperlink{head_8h_aca3f584034ddadfcf89951a1bf10f45c}{update} (\hyperlink{structcontainer}{container} $\ast$grid)
-\item 
+\begin{DoxyCompactList}\small\item\em Fonction qui s\textquotesingle{}occupe de tout les appelles de detection, de suppression et de replacer les grilles. \end{DoxyCompactList}\item 
 void \hyperlink{head_8h_af20cf8b598b78389dff22b3d176a3727}{init\+Container} (int width, int height, \hyperlink{structcontainer}{container} $\ast$item)
 \item 
 \hyperlink{structcontainer}{container} \hyperlink{head_8h_aae1449e449d2f69b52594cccb1dc1e42}{random\+Piece} ()
@@ -444,6 +443,10 @@ Here is the caller graph for this function\+:\nopagebreak
 
 
 
+Supprime les colonnes contenue dans le tableau index\+List. 
+
+
+
 Definition at line 108 of file update.\+c.
 
 
@@ -512,6 +515,10 @@ References container\+::data.
 
 
 
+Supprime les lignes contenue dans le tableau index\+List. 
+
+
+
 Definition at line 44 of file update.\+c.
 
 
@@ -555,6 +562,10 @@ Here is the caller graph for this function\+:\nopagebreak
 \index{detect\+Col@{detect\+Col}!head.\+h@{head.\+h}}
 \subsubsection{\texorpdfstring{detect\+Col()}{detectCol()}}
 {\footnotesize\ttfamily int$\ast$ detect\+Col (\begin{DoxyParamCaption}\item[{\hyperlink{structcontainer}{container} $\ast$}]{grid }\end{DoxyParamCaption})}
+
+
+
+Renvoie un tableau contenant tout les index de colonnes pleines. 
 
 
 
@@ -612,6 +623,10 @@ Here is the caller graph for this function\+:\nopagebreak
 \index{detect\+Row@{detect\+Row}!head.\+h@{head.\+h}}
 \subsubsection{\texorpdfstring{detect\+Row()}{detectRow()}}
 {\footnotesize\ttfamily int$\ast$ detect\+Row (\begin{DoxyParamCaption}\item[{\hyperlink{structcontainer}{container} $\ast$}]{grid }\end{DoxyParamCaption})}
+
+
+
+Renvoie un tableau contenant tout les index de lignes pleines. 
 
 
 
@@ -733,6 +748,10 @@ Here is the caller graph for this function\+:\nopagebreak
 
 
 
+detecte si une colonne est pleine 
+
+
+
 Definition at line 89 of file update.\+c.
 
 
@@ -779,6 +798,10 @@ Here is the caller graph for this function\+:\nopagebreak
 
 
 
+detecte si une ligne est pleine 
+
+
+
 Definition at line 27 of file update.\+c.
 
 
@@ -820,6 +843,10 @@ Here is the caller graph for this function\+:\nopagebreak
 \index{gravity@{gravity}!head.\+h@{head.\+h}}
 \subsubsection{\texorpdfstring{gravity()}{gravity()}}
 {\footnotesize\ttfamily void gravity (\begin{DoxyParamCaption}\item[{\hyperlink{structcontainer}{container} $\ast$}]{grid,  }\item[{int $\ast$}]{index\+\_\+list\+\_\+line,  }\item[{int $\ast$}]{index\+\_\+list\+\_\+col }\end{DoxyParamCaption})}
+
+
+
+S\textquotesingle{}occupe de replacer toute les cases de la grille selon les index qui ont été supprimé 
 
 
 
@@ -1028,6 +1055,10 @@ Definition at line 36 of file user.\+c.
 References container\+::data, container\+::len, and container\+::size.
 
 
+
+Referenced by main().
+
+
 \begin{DoxyCode}
 37 \{
 38     \textcolor{keywordtype}{int} i,j,width,height;
@@ -1044,6 +1075,13 @@ References container\+::data, container\+::len, and container\+::size.
 49     free(tmp);
 50 \}
 \end{DoxyCode}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=216pt]{head_8h_afbdf40ca68538464d0df29d9b2a77366_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{head_8h_a44fa0cbfa7fc79473c8ac9ca3b198f5a}\label{head_8h_a44fa0cbfa7fc79473c8ac9ca3b198f5a}} 
 \index{head.\+h@{head.\+h}!rotate\+\_\+90@{rotate\+\_\+90}}
 \index{rotate\+\_\+90@{rotate\+\_\+90}!head.\+h@{head.\+h}}
@@ -1086,6 +1124,10 @@ References container\+::data, container\+::len, and container\+::size.
 \index{update@{update}!head.\+h@{head.\+h}}
 \subsubsection{\texorpdfstring{update()}{update()}}
 {\footnotesize\ttfamily void update (\begin{DoxyParamCaption}\item[{\hyperlink{structcontainer}{container} $\ast$}]{grid }\end{DoxyParamCaption})}
+
+
+
+Fonction qui s\textquotesingle{}occupe de tout les appelles de detection, de suppression et de replacer les grilles. 
 
 
 
