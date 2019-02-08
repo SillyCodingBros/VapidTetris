@@ -33,7 +33,7 @@ char fullRow(container* grid, int index){
 	max_len = grid->len;
 
 	for(j=index; j< index + max_len; ++j){
-		if(save_data[j] != 1) break;
+		if(save_data[j] == 0) break;
 	}
 	if(j == index + max_len){
 		return 1;
@@ -97,7 +97,7 @@ char fullCol(container* grid, int index){
 	max_len = grid->len;
 
 	for(j=index; j<max_size; j+=max_len){
-		if(save_data[j] != 1) break;
+		if(save_data[j] == 0) break;
 	}
 	if(j >= max_size){
 		return 1;
