@@ -1,11 +1,21 @@
 #include <SDL2/SDL.h>
 #include "head.h"
 
+
+/**
+ * \struct cell
+ * \brief Objet de stockage de cellule.
+ *
+ * cell permet de stocker les informations pour l'affichage.
+ */
+
 typedef struct{
+    /// Stocke les informations de la bordure : dimension, coordonnées.
     SDL_Rect border;
+    /// Stocke les informations de la case : dimension, coordonnées.
     SDL_Rect cases;
+    /// Stocke la couleur de la case avec .
     SDL_Color color;
-    Uint8 r,g,b;
 }cell;
 
 cell* initDisplay(container* grid, int cellSize);
@@ -57,6 +67,7 @@ int main(int argc, char const *argv[]) {
                     case 'd': piece_x+=1; break;
                     case 'z': piece_y-=1; break;
                     case 's': piece_y+=1; break;
+                    case 'r': rotate_180(&play_piece); break;
                     case 'p':
                         if (checkCollision(&play_grid, &play_piece, piece_x, piece_y)) {
                             printf("Can't fit here!\n");
