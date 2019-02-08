@@ -1,0 +1,378 @@
+\hypertarget{update_8c}{}\section{update.\+c File Reference}
+\label{update_8c}\index{update.\+c@{update.\+c}}
+{\ttfamily \#include \char`\"{}head.\+h\char`\"{}}\newline
+Include dependency graph for update.\+c\+:
+% FIG 0
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int $\ast$ \hyperlink{update_8c_af9526652ed9443df3955c6cac0fe12c7}{detect\+Row} (\hyperlink{structcontainer}{container} $\ast$grid)
+\item 
+char \hyperlink{update_8c_a35c79938c8ccc4683d509620aa6e15af}{full\+Row} (\hyperlink{structcontainer}{container} $\ast$grid, int index)
+\item 
+void \hyperlink{update_8c_ab48ae1a72cd2b7ff673d732f26d74ce0}{delete\+Row} (\hyperlink{structcontainer}{container} $\ast$grid, int $\ast$index\+\_\+list)
+\item 
+int $\ast$ \hyperlink{update_8c_a0e35a2936fc69af30890ce30a082b594}{detect\+Col} (\hyperlink{structcontainer}{container} $\ast$grid)
+\item 
+char \hyperlink{update_8c_aebb74ac9ba3f8c734beba4617a6bf439}{full\+Col} (\hyperlink{structcontainer}{container} $\ast$grid, int index)
+\item 
+void \hyperlink{update_8c_aa4713ce5d04fcf86179bc68fbd9bdbd4}{delete\+Col} (\hyperlink{structcontainer}{container} $\ast$grid, int $\ast$index\+\_\+list)
+\item 
+void \hyperlink{update_8c_a4fa6bbed60f00a099cdd9d5d047c8a46}{gravity} (\hyperlink{structcontainer}{container} $\ast$grid, int $\ast$index\+\_\+list\+\_\+row, int $\ast$index\+\_\+list\+\_\+col)
+\item 
+void \hyperlink{update_8c_aca3f584034ddadfcf89951a1bf10f45c}{update} (\hyperlink{structcontainer}{container} $\ast$grid)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{update_8c_aa4713ce5d04fcf86179bc68fbd9bdbd4}\label{update_8c_aa4713ce5d04fcf86179bc68fbd9bdbd4}} 
+\index{update.\+c@{update.\+c}!delete\+Col@{delete\+Col}}
+\index{delete\+Col@{delete\+Col}!update.\+c@{update.\+c}}
+\subsubsection{\texorpdfstring{delete\+Col()}{deleteCol()}}
+{\footnotesize\ttfamily void delete\+Col (\begin{DoxyParamCaption}\item[{\hyperlink{structcontainer}{container} $\ast$}]{grid,  }\item[{int $\ast$}]{index\+\_\+list }\end{DoxyParamCaption})}
+
+
+
+Definition at line 108 of file update.\+c.
+
+
+
+References container\+::data, container\+::len, and container\+::size.
+
+
+
+Referenced by update().
+
+
+\begin{DoxyCode}
+108                                                 \{
+109 
+110     \textcolor{keywordtype}{int} actual, max\_len, max\_size, max\_size1, i, j;
+111     \textcolor{keywordtype}{char} *save\_data;
+112 
+113     \textcolor{comment}{//Sauvegarde}
+114     save\_data = grid->\hyperlink{structcontainer_aefae69762fe9c24169e2ca5418a711a1}{data};
+115     max\_len = grid->\hyperlink{structcontainer_a0069496fb95c879cd33fb79ab726e81a}{len};
+116     max\_size1 = grid->\hyperlink{structcontainer_a1e938d250074e70b9778df1b59121744}{size};
+117 
+118     max\_size = index\_list[0];
+119 
+120     \textcolor{keywordflow}{for}(i=1; i<max\_size; ++i)\{
+121         actual = index\_list[i];
+122         \textcolor{keywordflow}{for}(j=actual; j< max\_size1; j += max\_len)\{
+123             save\_data[j] = 0;
+124         \}
+125     \}
+126 
+127 \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+% FIG 1
+\mbox{\Hypertarget{update_8c_ab48ae1a72cd2b7ff673d732f26d74ce0}\label{update_8c_ab48ae1a72cd2b7ff673d732f26d74ce0}} 
+\index{update.\+c@{update.\+c}!delete\+Row@{delete\+Row}}
+\index{delete\+Row@{delete\+Row}!update.\+c@{update.\+c}}
+\subsubsection{\texorpdfstring{delete\+Row()}{deleteRow()}}
+{\footnotesize\ttfamily void delete\+Row (\begin{DoxyParamCaption}\item[{\hyperlink{structcontainer}{container} $\ast$}]{grid,  }\item[{int $\ast$}]{index\+\_\+list }\end{DoxyParamCaption})}
+
+
+
+Definition at line 44 of file update.\+c.
+
+
+
+References container\+::data, and container\+::len.
+
+
+
+Referenced by update().
+
+
+\begin{DoxyCode}
+44                                                 \{
+45 
+46     \textcolor{keywordtype}{int} actual, max\_len, max\_size, i, j;
+47     \textcolor{keywordtype}{char} *save\_data;
+48 
+49     \textcolor{comment}{//Sauvegarde}
+50     save\_data = grid->\hyperlink{structcontainer_aefae69762fe9c24169e2ca5418a711a1}{data};
+51     max\_len = grid->\hyperlink{structcontainer_a0069496fb95c879cd33fb79ab726e81a}{len};
+52 
+53     max\_size = index\_list[0];
+54     \textcolor{keywordflow}{for}(i=1; i<max\_size; ++i)\{
+55         actual = index\_list[i];
+56         \textcolor{keywordflow}{for}(j=actual; j< actual + max\_len; ++j)\{
+57             save\_data[j] = 0;
+58         \}
+59     \}
+60 
+61 \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+% FIG 2
+\mbox{\Hypertarget{update_8c_a0e35a2936fc69af30890ce30a082b594}\label{update_8c_a0e35a2936fc69af30890ce30a082b594}} 
+\index{update.\+c@{update.\+c}!detect\+Col@{detect\+Col}}
+\index{detect\+Col@{detect\+Col}!update.\+c@{update.\+c}}
+\subsubsection{\texorpdfstring{detect\+Col()}{detectCol()}}
+{\footnotesize\ttfamily int$\ast$ detect\+Col (\begin{DoxyParamCaption}\item[{\hyperlink{structcontainer}{container} $\ast$}]{grid }\end{DoxyParamCaption})}
+
+
+
+Definition at line 66 of file update.\+c.
+
+
+
+References full\+Col(), and container\+::len.
+
+
+
+Referenced by update().
+
+
+\begin{DoxyCode}
+66                                \{
+67 
+68     \textcolor{keywordtype}{int} *index, actual, max\_len, i;
+69 
+70     \textcolor{comment}{//save}
+71     max\_len = grid->\hyperlink{structcontainer_a0069496fb95c879cd33fb79ab726e81a}{len};
+72 
+73     \textcolor{comment}{//Index}
+74     actual = 1;
+75     index = malloc((max\_len+1)*\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int}));
+76 
+77     \textcolor{keywordflow}{for}(i=0; i<max\_len; ++i)\{
+78         \textcolor{keywordflow}{if}(\hyperlink{update_8c_aebb74ac9ba3f8c734beba4617a6bf439}{fullCol}(grid, i))\{
+79             index[actual] = i;
+80             ++actual;
+81         \}
+82     \}
+83 
+84     index[0] = actual;
+85 
+86     \textcolor{keywordflow}{return} realloc(index, actual);
+87 \}
+\end{DoxyCode}
+Here is the call graph for this function\+:
+% FIG 3
+Here is the caller graph for this function\+:
+% FIG 4
+\mbox{\Hypertarget{update_8c_af9526652ed9443df3955c6cac0fe12c7}\label{update_8c_af9526652ed9443df3955c6cac0fe12c7}} 
+\index{update.\+c@{update.\+c}!detect\+Row@{detect\+Row}}
+\index{detect\+Row@{detect\+Row}!update.\+c@{update.\+c}}
+\subsubsection{\texorpdfstring{detect\+Row()}{detectRow()}}
+{\footnotesize\ttfamily int$\ast$ detect\+Row (\begin{DoxyParamCaption}\item[{\hyperlink{structcontainer}{container} $\ast$}]{grid }\end{DoxyParamCaption})}
+
+
+
+Definition at line 4 of file update.\+c.
+
+
+
+References full\+Row(), container\+::len, and container\+::size.
+
+
+
+Referenced by update().
+
+
+\begin{DoxyCode}
+4                                \{
+5 
+6     \textcolor{keywordtype}{int} *index, actual, max\_len, max\_size, i;
+7 
+8     \textcolor{comment}{//Sauvegarde}
+9     max\_len = grid->\hyperlink{structcontainer_a0069496fb95c879cd33fb79ab726e81a}{len};
+10     max\_size = grid->\hyperlink{structcontainer_a1e938d250074e70b9778df1b59121744}{size};
+11 
+12     \textcolor{comment}{//Index}
+13     actual = 1;
+14     index = malloc((max\_size/max\_len + 1)*\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int}));
+15 
+16     \textcolor{keywordflow}{for}(i=0; i<max\_size; i += max\_len)\{
+17         \textcolor{keywordflow}{if}(\hyperlink{update_8c_a35c79938c8ccc4683d509620aa6e15af}{fullRow}(grid, i))\{
+18             index[actual] = i;
+19             ++actual;
+20         \}
+21     \}
+22     index[0] = actual;
+23 
+24     \textcolor{keywordflow}{return} realloc(index, actual);
+25 \}
+\end{DoxyCode}
+Here is the call graph for this function\+:
+% FIG 5
+Here is the caller graph for this function\+:
+% FIG 6
+\mbox{\Hypertarget{update_8c_aebb74ac9ba3f8c734beba4617a6bf439}\label{update_8c_aebb74ac9ba3f8c734beba4617a6bf439}} 
+\index{update.\+c@{update.\+c}!full\+Col@{full\+Col}}
+\index{full\+Col@{full\+Col}!update.\+c@{update.\+c}}
+\subsubsection{\texorpdfstring{full\+Col()}{fullCol()}}
+{\footnotesize\ttfamily char full\+Col (\begin{DoxyParamCaption}\item[{\hyperlink{structcontainer}{container} $\ast$}]{grid,  }\item[{int}]{index }\end{DoxyParamCaption})}
+
+
+
+Definition at line 89 of file update.\+c.
+
+
+
+References container\+::data, container\+::len, and container\+::size.
+
+
+
+Referenced by detect\+Col().
+
+
+\begin{DoxyCode}
+89                                         \{
+90 
+91     \textcolor{keywordtype}{int} max\_size, max\_len, j;
+92     \textcolor{keywordtype}{char}* save\_data;
+93 
+94     \textcolor{comment}{//save}
+95     save\_data = grid->\hyperlink{structcontainer_aefae69762fe9c24169e2ca5418a711a1}{data};
+96     max\_size = grid->\hyperlink{structcontainer_a1e938d250074e70b9778df1b59121744}{size};
+97     max\_len = grid->\hyperlink{structcontainer_a0069496fb95c879cd33fb79ab726e81a}{len};
+98 
+99     \textcolor{keywordflow}{for}(j=index; j<max\_size; j+=max\_len)\{
+100         \textcolor{keywordflow}{if}(save\_data[j] != 1) \textcolor{keywordflow}{break};
+101     \}
+102     \textcolor{keywordflow}{if}(j >= max\_size)\{
+103         \textcolor{keywordflow}{return} 1;
+104     \}
+105     \textcolor{keywordflow}{return} 0;
+106 \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+% FIG 7
+\mbox{\Hypertarget{update_8c_a35c79938c8ccc4683d509620aa6e15af}\label{update_8c_a35c79938c8ccc4683d509620aa6e15af}} 
+\index{update.\+c@{update.\+c}!full\+Row@{full\+Row}}
+\index{full\+Row@{full\+Row}!update.\+c@{update.\+c}}
+\subsubsection{\texorpdfstring{full\+Row()}{fullRow()}}
+{\footnotesize\ttfamily char full\+Row (\begin{DoxyParamCaption}\item[{\hyperlink{structcontainer}{container} $\ast$}]{grid,  }\item[{int}]{index }\end{DoxyParamCaption})}
+
+
+
+Definition at line 27 of file update.\+c.
+
+
+
+References container\+::data, and container\+::len.
+
+
+
+Referenced by detect\+Row().
+
+
+\begin{DoxyCode}
+27                                         \{
+28 
+29     \textcolor{keywordtype}{int} max\_len, j;
+30     \textcolor{keywordtype}{char}* save\_data;
+31 
+32     save\_data = grid->\hyperlink{structcontainer_aefae69762fe9c24169e2ca5418a711a1}{data};
+33     max\_len = grid->\hyperlink{structcontainer_a0069496fb95c879cd33fb79ab726e81a}{len};
+34 
+35     \textcolor{keywordflow}{for}(j=index; j< index + max\_len; ++j)\{
+36         \textcolor{keywordflow}{if}(save\_data[j] != 1) \textcolor{keywordflow}{break};
+37     \}
+38     \textcolor{keywordflow}{if}(j == index + max\_len)\{
+39         \textcolor{keywordflow}{return} 1;
+40     \}
+41     \textcolor{keywordflow}{return} 0;
+42 \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+% FIG 8
+\mbox{\Hypertarget{update_8c_a4fa6bbed60f00a099cdd9d5d047c8a46}\label{update_8c_a4fa6bbed60f00a099cdd9d5d047c8a46}} 
+\index{update.\+c@{update.\+c}!gravity@{gravity}}
+\index{gravity@{gravity}!update.\+c@{update.\+c}}
+\subsubsection{\texorpdfstring{gravity()}{gravity()}}
+{\footnotesize\ttfamily void gravity (\begin{DoxyParamCaption}\item[{\hyperlink{structcontainer}{container} $\ast$}]{grid,  }\item[{int $\ast$}]{index\+\_\+list\+\_\+row,  }\item[{int $\ast$}]{index\+\_\+list\+\_\+col }\end{DoxyParamCaption})}
+
+
+
+Definition at line 130 of file update.\+c.
+
+
+
+References container\+::data, container\+::len, and container\+::size.
+
+
+
+Referenced by update().
+
+
+\begin{DoxyCode}
+130                                                                        \{
+131 
+132     \textcolor{keywordtype}{int} max\_len, max\_size, save\_size, save\_index, i, j, k;
+133     \textcolor{keywordtype}{char} *save\_data;
+134 
+135     \textcolor{comment}{//Save}
+136     save\_data = grid->\hyperlink{structcontainer_aefae69762fe9c24169e2ca5418a711a1}{data};
+137     max\_size = grid->\hyperlink{structcontainer_a1e938d250074e70b9778df1b59121744}{size};
+138     max\_len = grid->\hyperlink{structcontainer_a0069496fb95c879cd33fb79ab726e81a}{len};
+139 
+140     \textcolor{comment}{//Update row}
+141     save\_size = index\_list\_row[0];
+142     \textcolor{keywordflow}{for}(i=1; i<save\_size; ++i)\{
+143         \textcolor{keywordflow}{for}(j=index\_list\_row[i]-1; j>=0; --j)\{
+144             save\_data[j+max\_len] = save\_data[j];
+145             save\_data[j] = 0;
+146         \}
+147     \}
+148 
+149     \textcolor{comment}{//Update Col}
+150     save\_size = index\_list\_col[0];
+151     \textcolor{keywordflow}{for}(i=save\_size-1; i>=1; --i)\{
+152         save\_index = index\_list\_col[i];
+153         \textcolor{keywordflow}{for}(j=0; j<max\_size; j += max\_len)\{
+154             \textcolor{keywordflow}{for}(k=save\_index + j + 1; k < max\_len + j; ++k)\{
+155                 save\_data[k-1] = save\_data[k];
+156                 save\_data[k] = 0;
+157             \}
+158         \}
+159     \}
+160 
+161 \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+% FIG 9
+\mbox{\Hypertarget{update_8c_aca3f584034ddadfcf89951a1bf10f45c}\label{update_8c_aca3f584034ddadfcf89951a1bf10f45c}} 
+\index{update.\+c@{update.\+c}!update@{update}}
+\index{update@{update}!update.\+c@{update.\+c}}
+\subsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void update (\begin{DoxyParamCaption}\item[{\hyperlink{structcontainer}{container} $\ast$}]{grid }\end{DoxyParamCaption})}
+
+
+
+Definition at line 164 of file update.\+c.
+
+
+
+References delete\+Col(), delete\+Row(), detect\+Col(), detect\+Row(), and gravity().
+
+
+
+Referenced by main().
+
+
+\begin{DoxyCode}
+164                             \{
+165     \textcolor{keywordtype}{int} *index\_list\_row, *index\_list\_col;
+166     index\_list\_row = \hyperlink{update_8c_af9526652ed9443df3955c6cac0fe12c7}{detectRow}(grid);
+167     index\_list\_col = \hyperlink{update_8c_a0e35a2936fc69af30890ce30a082b594}{detectCol}(grid);
+168 
+169     \hyperlink{update_8c_ab48ae1a72cd2b7ff673d732f26d74ce0}{deleteRow}(grid, index\_list\_row);
+170     \hyperlink{update_8c_aa4713ce5d04fcf86179bc68fbd9bdbd4}{deleteCol}(grid, index\_list\_col);
+171 
+172     \hyperlink{update_8c_a4fa6bbed60f00a099cdd9d5d047c8a46}{gravity}(grid, index\_list\_row, index\_list\_col);
+173 
+174     free(index\_list\_row);
+175     free(index\_list\_col);
+176 \}
+\end{DoxyCode}
+Here is the call graph for this function\+:
+% FIG 10
+Here is the caller graph for this function\+:
+% FIG 11
