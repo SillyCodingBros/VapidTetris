@@ -11,7 +11,7 @@ void display(container* grid){
 
     for (i = 0; i < grid->size; i++) {
         if (i % grid->len == 0 && i != 0) {
-            printf("|%d\n|", (i/grid->len)-1);
+            printf("|%d\n|", (i/grid->len)-1);  // Erreur ! Affichage de 23 puis 25 dans les deux dernières lignes de la zone de jeu, et même phénomène pour la preview pièce
         }
 
         switch (grid->data[i]) {
