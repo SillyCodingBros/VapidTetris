@@ -8,8 +8,8 @@
 #include <string.h>
 
 /* -------------- Define ----------- */
-#define WIDTH 20
-#define HEIGHT 25
+#define WIDTH 25
+#define HEIGHT 20
 
 typedef struct {
     char* data;

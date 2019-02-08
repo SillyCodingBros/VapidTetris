@@ -12,13 +12,13 @@ CFLAGS = -Wall -g -O2 `sdl2-config --cflags`
 LFLAGS = -O2 `sdl2-config --libs` -lSDL2_image
 
 # define any directories containing header files other than /usr/include
-INCLUDES =
+INCLUDES = head.h
 
 # define any libraries to link into executable:
 LIBS =
 
 # define the C source files
-CLIENT = main.c container.c update.c user.c
+CLIENT = mainSDL.c container.c update.c user.c
 
 # define the C object files
 #
@@ -53,8 +53,8 @@ $(EXEC): $(COBJS)
 # it uses automatic variables $<: the name of the prerequisite of
 # the rule(a .c file) and $@: the name of the target of the rule (a .o file)
 # (see the gnu make manual section about automatic variables)
-.c.o:
-	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
+%.o:	%.c $(INCLUDES)
+	$(CC) $(CFLAGS) -c $<
 
 clean:
 	$(RM) *.o *~ $(EXEC)
