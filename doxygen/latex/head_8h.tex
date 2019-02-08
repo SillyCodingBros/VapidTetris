@@ -1,0 +1,1148 @@
+\hypertarget{head_8h}{}\section{head.\+h File Reference}
+\label{head_8h}\index{head.\+h@{head.\+h}}
+{\ttfamily \#include $<$time.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+Include dependency graph for head.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=322pt]{head_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=344pt]{head_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structcontainer}{container}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{head_8h_a241aeeb764887ae5e3de58b98f04b16d}{W\+I\+D\+TH}~20
+\item 
+\#define \hyperlink{head_8h_aed89bd71aee8be823e8a20ec4e093c1e}{H\+E\+I\+G\+HT}~25
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int $\ast$ \hyperlink{head_8h_af9526652ed9443df3955c6cac0fe12c7}{detect\+Row} (\hyperlink{structcontainer}{container} $\ast$grid)
+\item 
+char \hyperlink{head_8h_a35c79938c8ccc4683d509620aa6e15af}{full\+Row} (\hyperlink{structcontainer}{container} $\ast$grid, int index)
+\item 
+void \hyperlink{head_8h_a1b4ff27dd8eca8ec63460b424310d541}{delete\+Row} (\hyperlink{structcontainer}{container} $\ast$grid, int $\ast$index\+List)
+\item 
+int $\ast$ \hyperlink{head_8h_a0e35a2936fc69af30890ce30a082b594}{detect\+Col} (\hyperlink{structcontainer}{container} $\ast$grid)
+\item 
+char \hyperlink{head_8h_aebb74ac9ba3f8c734beba4617a6bf439}{full\+Col} (\hyperlink{structcontainer}{container} $\ast$grid, int index)
+\item 
+void \hyperlink{head_8h_a7bf753ec2f6d5d89d3cfbce8d704428f}{delete\+Col} (\hyperlink{structcontainer}{container} $\ast$grid, int $\ast$index\+List)
+\item 
+void \hyperlink{head_8h_afdd0072ee83eaeca8b99941e73bf2c8e}{gravity} (\hyperlink{structcontainer}{container} $\ast$grid, int $\ast$index\+\_\+list\+\_\+line, int $\ast$index\+\_\+list\+\_\+col)
+\item 
+void \hyperlink{head_8h_aca3f584034ddadfcf89951a1bf10f45c}{update} (\hyperlink{structcontainer}{container} $\ast$grid)
+\item 
+void \hyperlink{head_8h_af20cf8b598b78389dff22b3d176a3727}{init\+Container} (int width, int height, \hyperlink{structcontainer}{container} $\ast$item)
+\item 
+\hyperlink{structcontainer}{container} \hyperlink{head_8h_aae1449e449d2f69b52594cccb1dc1e42}{random\+Piece} ()
+\item 
+\hyperlink{structcontainer}{container} \hyperlink{head_8h_acdd60fa36d582876e0c842fadf1816d7}{createU} ()
+\item 
+\hyperlink{structcontainer}{container} \hyperlink{head_8h_a7d1d76e4670bb877ca26b4e79db69927}{create\+L1} ()
+\item 
+\hyperlink{structcontainer}{container} \hyperlink{head_8h_a4a33c04f7b6aa23f5c9b912bf9c269d7}{create\+L2} ()
+\item 
+\hyperlink{structcontainer}{container} \hyperlink{head_8h_a6fe2743b89336db44793a23f4271b75a}{create\+Cross} ()
+\item 
+\hyperlink{structcontainer}{container} \hyperlink{head_8h_a8a2fed74e961c8603aaaacd3ec243111}{create\+Dot} ()
+\item 
+\hyperlink{structcontainer}{container} \hyperlink{head_8h_ab4a57956d1d813e81c375d37dcd9dd83}{create\+Line} ()
+\item 
+void \hyperlink{head_8h_a2a9dbe4ff3be91108eadb428d77debd6}{delete\+Container} (\hyperlink{structcontainer}{container} $\ast$item)
+\item 
+int \hyperlink{head_8h_a7a74c6812adffb8d4419092b999a823b}{check\+Collision} (\hyperlink{structcontainer}{container} $\ast$grid, \hyperlink{structcontainer}{container} $\ast$piece, int x, int y)
+\item 
+void \hyperlink{head_8h_a46bfac7d0493d39bd4aad51f270bd0d7}{place} (\hyperlink{structcontainer}{container} $\ast$grid, \hyperlink{structcontainer}{container} $\ast$piece, int x, int y)
+\item 
+void \hyperlink{head_8h_ac2b3cb6c7ec0748f0c4c1a46e0997d70}{display} (\hyperlink{structcontainer}{container} $\ast$grid)
+\item 
+void \hyperlink{head_8h_a44fa0cbfa7fc79473c8ac9ca3b198f5a}{rotate\+\_\+90} (\hyperlink{structcontainer}{container} $\ast$piece)
+\item 
+void \hyperlink{head_8h_afbdf40ca68538464d0df29d9b2a77366}{rotate\+\_\+180} (\hyperlink{structcontainer}{container} $\ast$piece)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{head_8h_aed89bd71aee8be823e8a20ec4e093c1e}\label{head_8h_aed89bd71aee8be823e8a20ec4e093c1e}} 
+\index{head.\+h@{head.\+h}!H\+E\+I\+G\+HT@{H\+E\+I\+G\+HT}}
+\index{H\+E\+I\+G\+HT@{H\+E\+I\+G\+HT}!head.\+h@{head.\+h}}
+\subsubsection{\texorpdfstring{H\+E\+I\+G\+HT}{HEIGHT}}
+{\footnotesize\ttfamily \#define H\+E\+I\+G\+HT~25}
+
+
+
+Definition at line 12 of file head.\+h.
+
+
+
+Referenced by main().
+
+\mbox{\Hypertarget{head_8h_a241aeeb764887ae5e3de58b98f04b16d}\label{head_8h_a241aeeb764887ae5e3de58b98f04b16d}} 
+\index{head.\+h@{head.\+h}!W\+I\+D\+TH@{W\+I\+D\+TH}}
+\index{W\+I\+D\+TH@{W\+I\+D\+TH}!head.\+h@{head.\+h}}
+\subsubsection{\texorpdfstring{W\+I\+D\+TH}{WIDTH}}
+{\footnotesize\ttfamily \#define W\+I\+D\+TH~20}
+
+
+
+Definition at line 11 of file head.\+h.
+
+
+
+Referenced by main().
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{head_8h_a7a74c6812adffb8d4419092b999a823b}\label{head_8h_a7a74c6812adffb8d4419092b999a823b}} 
+\index{head.\+h@{head.\+h}!check\+Collision@{check\+Collision}}
+\index{check\+Collision@{check\+Collision}!head.\+h@{head.\+h}}
+\subsubsection{\texorpdfstring{check\+Collision()}{checkCollision()}}
+{\footnotesize\ttfamily int check\+Collision (\begin{DoxyParamCaption}\item[{\hyperlink{structcontainer}{container} $\ast$}]{grid,  }\item[{\hyperlink{structcontainer}{container} $\ast$}]{piece,  }\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+
+
+Definition at line 110 of file container.\+c.
+
+
+
+References container\+::data, container\+::len, and container\+::size.
+
+
+
+Referenced by main().
+
+
+\begin{DoxyCode}
+110                                                                      \{
+111     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < piece->\hyperlink{structcontainer_a1e938d250074e70b9778df1b59121744}{size}/piece->\hyperlink{structcontainer_a0069496fb95c879cd33fb79ab726e81a}{len}; i++) \{
+112         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < piece->\hyperlink{structcontainer_a0069496fb95c879cd33fb79ab726e81a}{len}; j++) \{
+113             \textcolor{keywordflow}{if} (i+y < 0 || i+y >= (grid->\hyperlink{structcontainer_a1e938d250074e70b9778df1b59121744}{size}/grid->\hyperlink{structcontainer_a0069496fb95c879cd33fb79ab726e81a}{len}) || j+x < 0 || j+x >= grid->
+      \hyperlink{structcontainer_a0069496fb95c879cd33fb79ab726e81a}{len}) \{
+114                 \textcolor{keywordflow}{return} 1;
+115             \}
+116             \textcolor{keywordflow}{if} (grid->\hyperlink{structcontainer_aefae69762fe9c24169e2ca5418a711a1}{data}[((i+y)*grid->\hyperlink{structcontainer_a0069496fb95c879cd33fb79ab726e81a}{len})+j+x] && piece->\hyperlink{structcontainer_aefae69762fe9c24169e2ca5418a711a1}{data}[(i*piece->
+      \hyperlink{structcontainer_a0069496fb95c879cd33fb79ab726e81a}{len})+j]) \{
+117                 \textcolor{keywordflow}{return} 1;
+118             \}
+119         \}
+120     \}
+121     \textcolor{keywordflow}{return} 0;
+122 \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=234pt]{head_8h_a7a74c6812adffb8d4419092b999a823b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{head_8h_a6fe2743b89336db44793a23f4271b75a}\label{head_8h_a6fe2743b89336db44793a23f4271b75a}} 
+\index{head.\+h@{head.\+h}!create\+Cross@{create\+Cross}}
+\index{create\+Cross@{create\+Cross}!head.\+h@{head.\+h}}
+\subsubsection{\texorpdfstring{create\+Cross()}{createCross()}}
+{\footnotesize\ttfamily \hyperlink{structcontainer}{container} create\+Cross (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 75 of file container.\+c.
+
+
+
+References container\+::data, and init\+Container().
+
+
+
+Referenced by random\+Piece().
+
+
+\begin{DoxyCode}
+75                        \{
+76     \hyperlink{structcontainer}{container} piece;
+77     \hyperlink{container_8c_af20cf8b598b78389dff22b3d176a3727}{initContainer}(5, 5, &piece);
+78     piece.\hyperlink{structcontainer_aefae69762fe9c24169e2ca5418a711a1}{data}[2] = 1;
+79     piece.\hyperlink{structcontainer_aefae69762fe9c24169e2ca5418a711a1}{data}[7] = 1;
+80     piece.\hyperlink{structcontainer_aefae69762fe9c24169e2ca5418a711a1}{data}[10] = 1;
+81     piece.\hyperlink{structcontainer_aefae69762fe9c24169e2ca5418a711a1}{data}[11] = 1;
+82     piece.\hyperlink{structcontainer_aefae69762fe9c24169e2ca5418a711a1}{data}[12] = 1;
+83     piece.\hyperlink{structcontainer_aefae69762fe9c24169e2ca5418a711a1}{data}[13] = 1;
+84     piece.\hyperlink{structcontainer_aefae69762fe9c24169e2ca5418a711a1}{data}[14] = 1;
+85     piece.\hyperlink{structcontainer_aefae69762fe9c24169e2ca5418a711a1}{data}[17] = 1;
+86     piece.\hyperlink{structcontainer_aefae69762fe9c24169e2ca5418a711a1}{data}[22] = 1;
+87     piece.\hyperlink{structcontainer_aefae69762fe9c24169e2ca5418a711a1}{data}[24] = 0;
+88     \textcolor{keywordflow}{return} piece;
+89 \}
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=257pt]{head_8h_a6fe2743b89336db44793a23f4271b75a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=334pt]{head_8h_a6fe2743b89336db44793a23f4271b75a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{head_8h_a8a2fed74e961c8603aaaacd3ec243111}\label{head_8h_a8a2fed74e961c8603aaaacd3ec243111}} 
+\index{head.\+h@{head.\+h}!create\+Dot@{create\+Dot}}
+\index{create\+Dot@{create\+Dot}!head.\+h@{head.\+h}}
+\subsubsection{\texorpdfstring{create\+Dot()}{createDot()}}
+{\footnotesize\ttfamily \hyperlink{structcontainer}{container} create\+Dot (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 91 of file container.\+c.
+
+
+
+References container\+::data, and init\+Container().
+
+
+
+Referenced by random\+Piece().
+
+
+\begin{DoxyCode}
+91                      \{
+92     \hyperlink{structcontainer}{container} piece;
+93     \hyperlink{container_8c_af20cf8b598b78389dff22b3d176a3727}{initContainer}(1, 1, &piece);
+94     piece.\hyperlink{structcontainer_aefae69762fe9c24169e2ca5418a711a1}{data}[0] = 1;
+95     \textcolor{keywordflow}{return} piece;
+96 \}
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=246pt]{head_8h_a8a2fed74e961c8603aaaacd3ec243111_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=323pt]{head_8h_a8a2fed74e961c8603aaaacd3ec243111_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{head_8h_a7d1d76e4670bb877ca26b4e79db69927}\label{head_8h_a7d1d76e4670bb877ca26b4e79db69927}} 
+\index{head.\+h@{head.\+h}!create\+L1@{create\+L1}}
+\index{create\+L1@{create\+L1}!head.\+h@{head.\+h}}
+\subsubsection{\texorpdfstring{create\+L1()}{createL1()}}
+{\footnotesize\ttfamily \hyperlink{structcontainer}{container} create\+L1 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 55 of file container.\+c.
+
+
+
+References container\+::data, and init\+Container().
+
+
+
+Referenced by random\+Piece().
+
+
+\begin{DoxyCode}
+55                     \{
+56     \hyperlink{structcontainer}{container} piece;
+57     \hyperlink{container_8c_af20cf8b598b78389dff22b3d176a3727}{initContainer}(3, 2, &piece);
+58     piece.\hyperlink{structcontainer_aefae69762fe9c24169e2ca5418a711a1}{data}[0] = 1;
+59     piece.\hyperlink{structcontainer_aefae69762fe9c24169e2ca5418a711a1}{data}[3] = 1;
+60     piece.\hyperlink{structcontainer_aefae69762fe9c24169e2ca5418a711a1}{data}[4] = 1;
+61     piece.\hyperlink{structcontainer_aefae69762fe9c24169e2ca5418a711a1}{data}[5] = 1;
+62     \textcolor{keywordflow}{return} piece;
+63 \}
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=241pt]{head_8h_a7d1d76e4670bb877ca26b4e79db69927_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=318pt]{head_8h_a7d1d76e4670bb877ca26b4e79db69927_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{head_8h_a4a33c04f7b6aa23f5c9b912bf9c269d7}\label{head_8h_a4a33c04f7b6aa23f5c9b912bf9c269d7}} 
+\index{head.\+h@{head.\+h}!create\+L2@{create\+L2}}
+\index{create\+L2@{create\+L2}!head.\+h@{head.\+h}}
+\subsubsection{\texorpdfstring{create\+L2()}{createL2()}}
+{\footnotesize\ttfamily \hyperlink{structcontainer}{container} create\+L2 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 65 of file container.\+c.
+
+
+
+References container\+::data, and init\+Container().
+
+
+
+Referenced by random\+Piece().
+
+
+\begin{DoxyCode}
+65                     \{
+66     \hyperlink{structcontainer}{container} piece;
+67     \hyperlink{container_8c_af20cf8b598b78389dff22b3d176a3727}{initContainer}(3, 2, &piece);
+68     piece.\hyperlink{structcontainer_aefae69762fe9c24169e2ca5418a711a1}{data}[2] = 1;
+69     piece.\hyperlink{structcontainer_aefae69762fe9c24169e2ca5418a711a1}{data}[3] = 1;
+70     piece.\hyperlink{structcontainer_aefae69762fe9c24169e2ca5418a711a1}{data}[4] = 1;
+71     piece.\hyperlink{structcontainer_aefae69762fe9c24169e2ca5418a711a1}{data}[5] = 1;
+72     \textcolor{keywordflow}{return} piece;
+73 \}
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=241pt]{head_8h_a4a33c04f7b6aa23f5c9b912bf9c269d7_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=318pt]{head_8h_a4a33c04f7b6aa23f5c9b912bf9c269d7_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{head_8h_ab4a57956d1d813e81c375d37dcd9dd83}\label{head_8h_ab4a57956d1d813e81c375d37dcd9dd83}} 
+\index{head.\+h@{head.\+h}!create\+Line@{create\+Line}}
+\index{create\+Line@{create\+Line}!head.\+h@{head.\+h}}
+\subsubsection{\texorpdfstring{create\+Line()}{createLine()}}
+{\footnotesize\ttfamily \hyperlink{structcontainer}{container} create\+Line (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 98 of file container.\+c.
+
+
+
+References container\+::data, and init\+Container().
+
+
+
+Referenced by random\+Piece().
+
+
+\begin{DoxyCode}
+98                       \{
+99     \hyperlink{structcontainer}{container} piece;
+100     \hyperlink{container_8c_af20cf8b598b78389dff22b3d176a3727}{initContainer}(1, 2, &piece);
+101     piece.\hyperlink{structcontainer_aefae69762fe9c24169e2ca5418a711a1}{data}[0] = 1;
+102     piece.\hyperlink{structcontainer_aefae69762fe9c24169e2ca5418a711a1}{data}[1] = 1;
+103     \textcolor{keywordflow}{return} piece;
+104 \}
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=249pt]{head_8h_ab4a57956d1d813e81c375d37dcd9dd83_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=326pt]{head_8h_ab4a57956d1d813e81c375d37dcd9dd83_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{head_8h_acdd60fa36d582876e0c842fadf1816d7}\label{head_8h_acdd60fa36d582876e0c842fadf1816d7}} 
+\index{head.\+h@{head.\+h}!createU@{createU}}
+\index{createU@{createU}!head.\+h@{head.\+h}}
+\subsubsection{\texorpdfstring{create\+U()}{createU()}}
+{\footnotesize\ttfamily \hyperlink{structcontainer}{container} createU (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 42 of file container.\+c.
+
+
+
+References container\+::data, and init\+Container().
+
+
+
+Referenced by random\+Piece().
+
+
+\begin{DoxyCode}
+42                    \{
+43     \hyperlink{structcontainer}{container} piece;
+44     \hyperlink{container_8c_af20cf8b598b78389dff22b3d176a3727}{initContainer}(3, 3, &piece);
+45     piece.\hyperlink{structcontainer_aefae69762fe9c24169e2ca5418a711a1}{data}[0] = 1;
+46     piece.\hyperlink{structcontainer_aefae69762fe9c24169e2ca5418a711a1}{data}[2] = 1;
+47     piece.\hyperlink{structcontainer_aefae69762fe9c24169e2ca5418a711a1}{data}[3] = 1;
+48     piece.\hyperlink{structcontainer_aefae69762fe9c24169e2ca5418a711a1}{data}[5] = 1;
+49     piece.\hyperlink{structcontainer_aefae69762fe9c24169e2ca5418a711a1}{data}[6] = 1;
+50     piece.\hyperlink{structcontainer_aefae69762fe9c24169e2ca5418a711a1}{data}[7] = 1;
+51     piece.\hyperlink{structcontainer_aefae69762fe9c24169e2ca5418a711a1}{data}[8] = 1;
+52     \textcolor{keywordflow}{return} piece;
+53 \}
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=238pt]{head_8h_acdd60fa36d582876e0c842fadf1816d7_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=315pt]{head_8h_acdd60fa36d582876e0c842fadf1816d7_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{head_8h_a7bf753ec2f6d5d89d3cfbce8d704428f}\label{head_8h_a7bf753ec2f6d5d89d3cfbce8d704428f}} 
+\index{head.\+h@{head.\+h}!delete\+Col@{delete\+Col}}
+\index{delete\+Col@{delete\+Col}!head.\+h@{head.\+h}}
+\subsubsection{\texorpdfstring{delete\+Col()}{deleteCol()}}
+{\footnotesize\ttfamily void delete\+Col (\begin{DoxyParamCaption}\item[{\hyperlink{structcontainer}{container} $\ast$}]{grid,  }\item[{int $\ast$}]{index\+List }\end{DoxyParamCaption})}
+
+
+
+Definition at line 108 of file update.\+c.
+
+
+
+References container\+::data, container\+::len, and container\+::size.
+
+
+
+Referenced by update().
+
+
+\begin{DoxyCode}
+108                                                 \{
+109 
+110     \textcolor{keywordtype}{int} actual, max\_len, max\_size, max\_size1, i, j;
+111     \textcolor{keywordtype}{char} *save\_data;
+112 
+113     \textcolor{comment}{//Sauvegarde}
+114     save\_data = grid->\hyperlink{structcontainer_aefae69762fe9c24169e2ca5418a711a1}{data};
+115     max\_len = grid->\hyperlink{structcontainer_a0069496fb95c879cd33fb79ab726e81a}{len};
+116     max\_size1 = grid->\hyperlink{structcontainer_a1e938d250074e70b9778df1b59121744}{size};
+117 
+118     max\_size = index\_list[0];
+119 
+120     \textcolor{keywordflow}{for}(i=1; i<max\_size; ++i)\{
+121         actual = index\_list[i];
+122         \textcolor{keywordflow}{for}(j=actual; j< max\_size1; j += max\_len)\{
+123             save\_data[j] = 0;
+124         \}
+125     \}
+126 
+127 \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=294pt]{head_8h_a7bf753ec2f6d5d89d3cfbce8d704428f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{head_8h_a2a9dbe4ff3be91108eadb428d77debd6}\label{head_8h_a2a9dbe4ff3be91108eadb428d77debd6}} 
+\index{head.\+h@{head.\+h}!delete\+Container@{delete\+Container}}
+\index{delete\+Container@{delete\+Container}!head.\+h@{head.\+h}}
+\subsubsection{\texorpdfstring{delete\+Container()}{deleteContainer()}}
+{\footnotesize\ttfamily void delete\+Container (\begin{DoxyParamCaption}\item[{\hyperlink{structcontainer}{container} $\ast$}]{item }\end{DoxyParamCaption})}
+
+
+
+Definition at line 106 of file container.\+c.
+
+
+
+References container\+::data.
+
+
+\begin{DoxyCode}
+106                                       \{
+107     free(item->\hyperlink{structcontainer_aefae69762fe9c24169e2ca5418a711a1}{data});
+108 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{head_8h_a1b4ff27dd8eca8ec63460b424310d541}\label{head_8h_a1b4ff27dd8eca8ec63460b424310d541}} 
+\index{head.\+h@{head.\+h}!delete\+Row@{delete\+Row}}
+\index{delete\+Row@{delete\+Row}!head.\+h@{head.\+h}}
+\subsubsection{\texorpdfstring{delete\+Row()}{deleteRow()}}
+{\footnotesize\ttfamily void delete\+Row (\begin{DoxyParamCaption}\item[{\hyperlink{structcontainer}{container} $\ast$}]{grid,  }\item[{int $\ast$}]{index\+List }\end{DoxyParamCaption})}
+
+
+
+Definition at line 44 of file update.\+c.
+
+
+
+References container\+::data, and container\+::len.
+
+
+
+Referenced by update().
+
+
+\begin{DoxyCode}
+44                                                 \{
+45 
+46     \textcolor{keywordtype}{int} actual, max\_len, max\_size, i, j;
+47     \textcolor{keywordtype}{char} *save\_data;
+48 
+49     \textcolor{comment}{//Sauvegarde}
+50     save\_data = grid->\hyperlink{structcontainer_aefae69762fe9c24169e2ca5418a711a1}{data};
+51     max\_len = grid->\hyperlink{structcontainer_a0069496fb95c879cd33fb79ab726e81a}{len};
+52 
+53     max\_size = index\_list[0];
+54     \textcolor{keywordflow}{for}(i=1; i<max\_size; ++i)\{
+55         actual = index\_list[i];
+56         \textcolor{keywordflow}{for}(j=actual; j< actual + max\_len; ++j)\{
+57             save\_data[j] = 0;
+58         \}
+59     \}
+60 
+61 \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=299pt]{head_8h_a1b4ff27dd8eca8ec63460b424310d541_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{head_8h_a0e35a2936fc69af30890ce30a082b594}\label{head_8h_a0e35a2936fc69af30890ce30a082b594}} 
+\index{head.\+h@{head.\+h}!detect\+Col@{detect\+Col}}
+\index{detect\+Col@{detect\+Col}!head.\+h@{head.\+h}}
+\subsubsection{\texorpdfstring{detect\+Col()}{detectCol()}}
+{\footnotesize\ttfamily int$\ast$ detect\+Col (\begin{DoxyParamCaption}\item[{\hyperlink{structcontainer}{container} $\ast$}]{grid }\end{DoxyParamCaption})}
+
+
+
+Definition at line 66 of file update.\+c.
+
+
+
+References full\+Col(), and container\+::len.
+
+
+
+Referenced by update().
+
+
+\begin{DoxyCode}
+66                                \{
+67 
+68     \textcolor{keywordtype}{int} *index, actual, max\_len, i;
+69 
+70     \textcolor{comment}{//save}
+71     max\_len = grid->\hyperlink{structcontainer_a0069496fb95c879cd33fb79ab726e81a}{len};
+72 
+73     \textcolor{comment}{//Index}
+74     actual = 1;
+75     index = malloc((max\_len+1)*\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int}));
+76 
+77     \textcolor{keywordflow}{for}(i=0; i<max\_len; ++i)\{
+78         \textcolor{keywordflow}{if}(\hyperlink{update_8c_aebb74ac9ba3f8c734beba4617a6bf439}{fullCol}(grid, i))\{
+79             index[actual] = i;
+80             ++actual;
+81         \}
+82     \}
+83 
+84     index[0] = actual;
+85 
+86     \textcolor{keywordflow}{return} realloc(index, actual);
+87 \}
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=219pt]{head_8h_a0e35a2936fc69af30890ce30a082b594_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=295pt]{head_8h_a0e35a2936fc69af30890ce30a082b594_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{head_8h_af9526652ed9443df3955c6cac0fe12c7}\label{head_8h_af9526652ed9443df3955c6cac0fe12c7}} 
+\index{head.\+h@{head.\+h}!detect\+Row@{detect\+Row}}
+\index{detect\+Row@{detect\+Row}!head.\+h@{head.\+h}}
+\subsubsection{\texorpdfstring{detect\+Row()}{detectRow()}}
+{\footnotesize\ttfamily int$\ast$ detect\+Row (\begin{DoxyParamCaption}\item[{\hyperlink{structcontainer}{container} $\ast$}]{grid }\end{DoxyParamCaption})}
+
+
+
+Definition at line 4 of file update.\+c.
+
+
+
+References full\+Row(), container\+::len, and container\+::size.
+
+
+
+Referenced by update().
+
+
+\begin{DoxyCode}
+4                                \{
+5 
+6     \textcolor{keywordtype}{int} *index, actual, max\_len, max\_size, i;
+7 
+8     \textcolor{comment}{//Sauvegarde}
+9     max\_len = grid->\hyperlink{structcontainer_a0069496fb95c879cd33fb79ab726e81a}{len};
+10     max\_size = grid->\hyperlink{structcontainer_a1e938d250074e70b9778df1b59121744}{size};
+11 
+12     \textcolor{comment}{//Index}
+13     actual = 1;
+14     index = malloc((max\_size/max\_len + 1)*\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{int}));
+15 
+16     \textcolor{keywordflow}{for}(i=0; i<max\_size; i += max\_len)\{
+17         \textcolor{keywordflow}{if}(\hyperlink{update_8c_a35c79938c8ccc4683d509620aa6e15af}{fullRow}(grid, i))\{
+18             index[actual] = i;
+19             ++actual;
+20         \}
+21     \}
+22     index[0] = actual;
+23 
+24     \textcolor{keywordflow}{return} realloc(index, actual);
+25 \}
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=230pt]{head_8h_af9526652ed9443df3955c6cac0fe12c7_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=300pt]{head_8h_af9526652ed9443df3955c6cac0fe12c7_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{head_8h_ac2b3cb6c7ec0748f0c4c1a46e0997d70}\label{head_8h_ac2b3cb6c7ec0748f0c4c1a46e0997d70}} 
+\index{head.\+h@{head.\+h}!display@{display}}
+\index{display@{display}!head.\+h@{head.\+h}}
+\subsubsection{\texorpdfstring{display()}{display()}}
+{\footnotesize\ttfamily void display (\begin{DoxyParamCaption}\item[{\hyperlink{structcontainer}{container} $\ast$}]{grid }\end{DoxyParamCaption})}
+
+
+
+Definition at line 3 of file user.\+c.
+
+
+
+References container\+::data, container\+::len, and container\+::size.
+
+
+
+Referenced by main().
+
+
+\begin{DoxyCode}
+3                              \{
+4     \textcolor{keywordtype}{char} *toShow = \textcolor{stringliteral}{"36m"};
+5     \textcolor{keywordtype}{int} i;
+6 
+7     \textcolor{keywordflow}{for} (i = 0; i < grid->\hyperlink{structcontainer_a0069496fb95c879cd33fb79ab726e81a}{len}+2; i++) \{
+8         printf(\textcolor{stringliteral}{"-"});
+9     \}
+10     printf(\textcolor{stringliteral}{"\(\backslash\)n|"});
+11 
+12     \textcolor{keywordflow}{for} (i = 0; i < grid->\hyperlink{structcontainer_a1e938d250074e70b9778df1b59121744}{size}; i++) \{
+13         \textcolor{keywordflow}{if} (i % grid->\hyperlink{structcontainer_a0069496fb95c879cd33fb79ab726e81a}{len} == 0 && i != 0) \{
+14             printf(\textcolor{stringliteral}{"|%d\(\backslash\)n|"}, (i/grid->\hyperlink{structcontainer_a0069496fb95c879cd33fb79ab726e81a}{len})-1);  \textcolor{comment}{// Erreur ! Affichage de 23 puis 25 dans les deux
+       dernières lignes de la zone de jeu, et même phénomène pour la preview pièce}
+15         \}
+16 
+17         \textcolor{keywordflow}{switch} (grid->\hyperlink{structcontainer_aefae69762fe9c24169e2ca5418a711a1}{data}[i]) \{
+18             \textcolor{keywordflow}{case} 2:
+19                 toShow = \textcolor{stringliteral}{"31m"};
+20                 \textcolor{keywordflow}{break};
+21         \}
+22 
+23         \textcolor{keywordflow}{if} (grid->\hyperlink{structcontainer_aefae69762fe9c24169e2ca5418a711a1}{data}[i] > 0)\{
+24             printf(\textcolor{stringliteral}{"\(\backslash\)033[%sX"}, toShow);
+25         \}\textcolor{keywordflow}{else}\{
+26             printf(\textcolor{stringliteral}{" "});
+27         \}
+28     \}
+29     printf(\textcolor{stringliteral}{"|%d\(\backslash\)n"},i/grid->\hyperlink{structcontainer_a0069496fb95c879cd33fb79ab726e81a}{len}-1);
+30     \textcolor{keywordflow}{for} (i = 0; i < grid->\hyperlink{structcontainer_a0069496fb95c879cd33fb79ab726e81a}{len}+2; i++) \{
+31         printf(\textcolor{stringliteral}{"-"});
+32     \}
+33     printf(\textcolor{stringliteral}{"\(\backslash\)n"});
+34 \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=201pt]{head_8h_ac2b3cb6c7ec0748f0c4c1a46e0997d70_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{head_8h_aebb74ac9ba3f8c734beba4617a6bf439}\label{head_8h_aebb74ac9ba3f8c734beba4617a6bf439}} 
+\index{head.\+h@{head.\+h}!full\+Col@{full\+Col}}
+\index{full\+Col@{full\+Col}!head.\+h@{head.\+h}}
+\subsubsection{\texorpdfstring{full\+Col()}{fullCol()}}
+{\footnotesize\ttfamily char full\+Col (\begin{DoxyParamCaption}\item[{\hyperlink{structcontainer}{container} $\ast$}]{grid,  }\item[{int}]{index }\end{DoxyParamCaption})}
+
+
+
+Definition at line 89 of file update.\+c.
+
+
+
+References container\+::data, container\+::len, and container\+::size.
+
+
+
+Referenced by detect\+Col().
+
+
+\begin{DoxyCode}
+89                                         \{
+90 
+91     \textcolor{keywordtype}{int} max\_size, max\_len, j;
+92     \textcolor{keywordtype}{char}* save\_data;
+93 
+94     \textcolor{comment}{//save}
+95     save\_data = grid->\hyperlink{structcontainer_aefae69762fe9c24169e2ca5418a711a1}{data};
+96     max\_size = grid->\hyperlink{structcontainer_a1e938d250074e70b9778df1b59121744}{size};
+97     max\_len = grid->\hyperlink{structcontainer_a0069496fb95c879cd33fb79ab726e81a}{len};
+98 
+99     \textcolor{keywordflow}{for}(j=index; j<max\_size; j+=max\_len)\{
+100         \textcolor{keywordflow}{if}(save\_data[j] != 1) \textcolor{keywordflow}{break};
+101     \}
+102     \textcolor{keywordflow}{if}(j >= max\_size)\{
+103         \textcolor{keywordflow}{return} 1;
+104     \}
+105     \textcolor{keywordflow}{return} 0;
+106 \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{head_8h_aebb74ac9ba3f8c734beba4617a6bf439_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{head_8h_a35c79938c8ccc4683d509620aa6e15af}\label{head_8h_a35c79938c8ccc4683d509620aa6e15af}} 
+\index{head.\+h@{head.\+h}!full\+Row@{full\+Row}}
+\index{full\+Row@{full\+Row}!head.\+h@{head.\+h}}
+\subsubsection{\texorpdfstring{full\+Row()}{fullRow()}}
+{\footnotesize\ttfamily char full\+Row (\begin{DoxyParamCaption}\item[{\hyperlink{structcontainer}{container} $\ast$}]{grid,  }\item[{int}]{index }\end{DoxyParamCaption})}
+
+
+
+Definition at line 27 of file update.\+c.
+
+
+
+References container\+::data, and container\+::len.
+
+
+
+Referenced by detect\+Row().
+
+
+\begin{DoxyCode}
+27                                         \{
+28 
+29     \textcolor{keywordtype}{int} max\_len, j;
+30     \textcolor{keywordtype}{char}* save\_data;
+31 
+32     save\_data = grid->\hyperlink{structcontainer_aefae69762fe9c24169e2ca5418a711a1}{data};
+33     max\_len = grid->\hyperlink{structcontainer_a0069496fb95c879cd33fb79ab726e81a}{len};
+34 
+35     \textcolor{keywordflow}{for}(j=index; j< index + max\_len; ++j)\{
+36         \textcolor{keywordflow}{if}(save\_data[j] != 1) \textcolor{keywordflow}{break};
+37     \}
+38     \textcolor{keywordflow}{if}(j == index + max\_len)\{
+39         \textcolor{keywordflow}{return} 1;
+40     \}
+41     \textcolor{keywordflow}{return} 0;
+42 \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{head_8h_a35c79938c8ccc4683d509620aa6e15af_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{head_8h_afdd0072ee83eaeca8b99941e73bf2c8e}\label{head_8h_afdd0072ee83eaeca8b99941e73bf2c8e}} 
+\index{head.\+h@{head.\+h}!gravity@{gravity}}
+\index{gravity@{gravity}!head.\+h@{head.\+h}}
+\subsubsection{\texorpdfstring{gravity()}{gravity()}}
+{\footnotesize\ttfamily void gravity (\begin{DoxyParamCaption}\item[{\hyperlink{structcontainer}{container} $\ast$}]{grid,  }\item[{int $\ast$}]{index\+\_\+list\+\_\+line,  }\item[{int $\ast$}]{index\+\_\+list\+\_\+col }\end{DoxyParamCaption})}
+
+
+
+Definition at line 130 of file update.\+c.
+
+
+
+References container\+::data, container\+::len, and container\+::size.
+
+
+
+Referenced by update().
+
+
+\begin{DoxyCode}
+130                                                                        \{
+131 
+132     \textcolor{keywordtype}{int} max\_len, max\_size, save\_size, save\_index, i, j, k;
+133     \textcolor{keywordtype}{char} *save\_data;
+134 
+135     \textcolor{comment}{//Save}
+136     save\_data = grid->\hyperlink{structcontainer_aefae69762fe9c24169e2ca5418a711a1}{data};
+137     max\_size = grid->\hyperlink{structcontainer_a1e938d250074e70b9778df1b59121744}{size};
+138     max\_len = grid->\hyperlink{structcontainer_a0069496fb95c879cd33fb79ab726e81a}{len};
+139 
+140     \textcolor{comment}{//Update row}
+141     save\_size = index\_list\_row[0];
+142     \textcolor{keywordflow}{for}(i=1; i<save\_size; ++i)\{
+143         \textcolor{keywordflow}{for}(j=index\_list\_row[i]-1; j>=0; --j)\{
+144             save\_data[j+max\_len] = save\_data[j];
+145             save\_data[j] = 0;
+146         \}
+147     \}
+148 
+149     \textcolor{comment}{//Update Col}
+150     save\_size = index\_list\_col[0];
+151     \textcolor{keywordflow}{for}(i=save\_size-1; i>=1; --i)\{
+152         save\_index = index\_list\_col[i];
+153         \textcolor{keywordflow}{for}(j=0; j<max\_size; j += max\_len)\{
+154             \textcolor{keywordflow}{for}(k=save\_index + j + 1; k < max\_len + j; ++k)\{
+155                 save\_data[k-1] = save\_data[k];
+156                 save\_data[k] = 0;
+157             \}
+158         \}
+159     \}
+160 
+161 \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=282pt]{head_8h_afdd0072ee83eaeca8b99941e73bf2c8e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{head_8h_af20cf8b598b78389dff22b3d176a3727}\label{head_8h_af20cf8b598b78389dff22b3d176a3727}} 
+\index{head.\+h@{head.\+h}!init\+Container@{init\+Container}}
+\index{init\+Container@{init\+Container}!head.\+h@{head.\+h}}
+\subsubsection{\texorpdfstring{init\+Container()}{initContainer()}}
+{\footnotesize\ttfamily void init\+Container (\begin{DoxyParamCaption}\item[{int}]{width,  }\item[{int}]{height,  }\item[{\hyperlink{structcontainer}{container} $\ast$}]{item }\end{DoxyParamCaption})}
+
+
+
+Definition at line 3 of file container.\+c.
+
+
+
+References container\+::data, container\+::len, and container\+::size.
+
+
+
+Referenced by create\+Cross(), create\+Dot(), create\+L1(), create\+L2(), create\+Line(), create\+U(), and main().
+
+
+\begin{DoxyCode}
+3                                                           \{
+4     item->\hyperlink{structcontainer_a0069496fb95c879cd33fb79ab726e81a}{len} = width;
+5     item->\hyperlink{structcontainer_a1e938d250074e70b9778df1b59121744}{size} = width * height;
+6     item->\hyperlink{structcontainer_aefae69762fe9c24169e2ca5418a711a1}{data} = malloc(item->\hyperlink{structcontainer_a1e938d250074e70b9778df1b59121744}{size} * \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{char}));
+7     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < item->\hyperlink{structcontainer_a1e938d250074e70b9778df1b59121744}{size}; ++i)
+8     \{
+9         item->\hyperlink{structcontainer_aefae69762fe9c24169e2ca5418a711a1}{data}[i] = 0;
+10     \}
+11 \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{head_8h_af20cf8b598b78389dff22b3d176a3727_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{head_8h_a46bfac7d0493d39bd4aad51f270bd0d7}\label{head_8h_a46bfac7d0493d39bd4aad51f270bd0d7}} 
+\index{head.\+h@{head.\+h}!place@{place}}
+\index{place@{place}!head.\+h@{head.\+h}}
+\subsubsection{\texorpdfstring{place()}{place()}}
+{\footnotesize\ttfamily void place (\begin{DoxyParamCaption}\item[{\hyperlink{structcontainer}{container} $\ast$}]{grid,  }\item[{\hyperlink{structcontainer}{container} $\ast$}]{piece,  }\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+
+
+Definition at line 124 of file container.\+c.
+
+
+
+References container\+::data, container\+::len, and container\+::size.
+
+
+
+Referenced by main().
+
+
+\begin{DoxyCode}
+124                                                               \{
+125     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < piece->\hyperlink{structcontainer_a1e938d250074e70b9778df1b59121744}{size}/piece->\hyperlink{structcontainer_a0069496fb95c879cd33fb79ab726e81a}{len}; i++) \{
+126         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < piece->\hyperlink{structcontainer_a0069496fb95c879cd33fb79ab726e81a}{len}; j++) \{
+127             \textcolor{keywordflow}{if} (piece->\hyperlink{structcontainer_aefae69762fe9c24169e2ca5418a711a1}{data}[(i*piece->\hyperlink{structcontainer_a0069496fb95c879cd33fb79ab726e81a}{len})+j] == 1) \{
+128                 grid->\hyperlink{structcontainer_aefae69762fe9c24169e2ca5418a711a1}{data}[((i+y)*grid->\hyperlink{structcontainer_a0069496fb95c879cd33fb79ab726e81a}{len})+j+x] = piece->\hyperlink{structcontainer_aefae69762fe9c24169e2ca5418a711a1}{data}[(i*piece->
+      \hyperlink{structcontainer_a0069496fb95c879cd33fb79ab726e81a}{len})+j];
+129             \}
+130         \}
+131     \}
+132 \}
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=194pt]{head_8h_a46bfac7d0493d39bd4aad51f270bd0d7_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{head_8h_aae1449e449d2f69b52594cccb1dc1e42}\label{head_8h_aae1449e449d2f69b52594cccb1dc1e42}} 
+\index{head.\+h@{head.\+h}!random\+Piece@{random\+Piece}}
+\index{random\+Piece@{random\+Piece}!head.\+h@{head.\+h}}
+\subsubsection{\texorpdfstring{random\+Piece()}{randomPiece()}}
+{\footnotesize\ttfamily \hyperlink{structcontainer}{container} random\+Piece (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 13 of file container.\+c.
+
+
+
+References create\+Cross(), create\+Dot(), create\+L1(), create\+L2(), create\+Line(), and create\+U().
+
+
+
+Referenced by main().
+
+
+\begin{DoxyCode}
+13                        \{
+14     \hyperlink{structcontainer}{container} piece;
+15     srand(time(NULL));
+16     \textcolor{keywordtype}{int} random = rand() % 6;
+17     \textcolor{keywordflow}{switch} (random)\{
+18         \textcolor{keywordflow}{case} 0 :
+19             piece = \hyperlink{container_8c_acdd60fa36d582876e0c842fadf1816d7}{createU}();
+20             \textcolor{keywordflow}{return} piece;
+21         \textcolor{keywordflow}{case} 1 :
+22             piece = \hyperlink{container_8c_a7d1d76e4670bb877ca26b4e79db69927}{createL1}();
+23             \textcolor{keywordflow}{return} piece;
+24         \textcolor{keywordflow}{case} 2 :
+25             piece = \hyperlink{container_8c_a4a33c04f7b6aa23f5c9b912bf9c269d7}{createL2}();
+26             \textcolor{keywordflow}{return} piece;
+27         \textcolor{keywordflow}{case} 3 :
+28             piece = \hyperlink{container_8c_a6fe2743b89336db44793a23f4271b75a}{createCross}();
+29             \textcolor{keywordflow}{return} piece;
+30         \textcolor{keywordflow}{case} 4:
+31             piece = \hyperlink{container_8c_a8a2fed74e961c8603aaaacd3ec243111}{createDot}();
+32             \textcolor{keywordflow}{return} piece;
+33         \textcolor{keywordflow}{case} 5 :
+34             piece = \hyperlink{container_8c_ab4a57956d1d813e81c375d37dcd9dd83}{createLine}();
+35             \textcolor{keywordflow}{return} piece;
+36         default :
+37             printf(\textcolor{stringliteral}{"Error : could not generate cooresponding piece for int : %d \(\backslash\)n"}, random);
+38             exit(0);
+39     \}
+40 \}
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{head_8h_aae1449e449d2f69b52594cccb1dc1e42_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=228pt]{head_8h_aae1449e449d2f69b52594cccb1dc1e42_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{head_8h_afbdf40ca68538464d0df29d9b2a77366}\label{head_8h_afbdf40ca68538464d0df29d9b2a77366}} 
+\index{head.\+h@{head.\+h}!rotate\+\_\+180@{rotate\+\_\+180}}
+\index{rotate\+\_\+180@{rotate\+\_\+180}!head.\+h@{head.\+h}}
+\subsubsection{\texorpdfstring{rotate\+\_\+180()}{rotate\_180()}}
+{\footnotesize\ttfamily void rotate\+\_\+180 (\begin{DoxyParamCaption}\item[{\hyperlink{structcontainer}{container} $\ast$}]{piece }\end{DoxyParamCaption})}
+
+
+
+Definition at line 36 of file user.\+c.
+
+
+
+References container\+::data, container\+::len, and container\+::size.
+
+
+\begin{DoxyCode}
+37 \{
+38     \textcolor{keywordtype}{int} i,j,width,height;
+39     width=piece->\hyperlink{structcontainer_a1e938d250074e70b9778df1b59121744}{size}/piece->\hyperlink{structcontainer_a0069496fb95c879cd33fb79ab726e81a}{len};
+40     height=piece->\hyperlink{structcontainer_a0069496fb95c879cd33fb79ab726e81a}{len};
+41     \textcolor{keywordtype}{char} * tmp=malloc(\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{char})*width*height);
+42     \textcolor{keywordflow}{for}(i=0;i<width;i++)
+43         \textcolor{keywordflow}{for}(j=0;j<height;j++)
+44             tmp[i*width+j]=piece->\hyperlink{structcontainer_aefae69762fe9c24169e2ca5418a711a1}{data}[i+width*j];
+45 
+46     \textcolor{keywordflow}{for}(i=0;i<width;i++)
+47         \textcolor{keywordflow}{for}(j=0;j<height;j++)
+48             piece->\hyperlink{structcontainer_aefae69762fe9c24169e2ca5418a711a1}{data}[i*width+j]=tmp[i*width+j];
+49     free(tmp);
+50 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{head_8h_a44fa0cbfa7fc79473c8ac9ca3b198f5a}\label{head_8h_a44fa0cbfa7fc79473c8ac9ca3b198f5a}} 
+\index{head.\+h@{head.\+h}!rotate\+\_\+90@{rotate\+\_\+90}}
+\index{rotate\+\_\+90@{rotate\+\_\+90}!head.\+h@{head.\+h}}
+\subsubsection{\texorpdfstring{rotate\+\_\+90()}{rotate\_90()}}
+{\footnotesize\ttfamily void rotate\+\_\+90 (\begin{DoxyParamCaption}\item[{\hyperlink{structcontainer}{container} $\ast$}]{piece }\end{DoxyParamCaption})}
+
+
+
+Definition at line 52 of file user.\+c.
+
+
+
+References container\+::data, container\+::len, and container\+::size.
+
+
+\begin{DoxyCode}
+53 \{
+54     \textcolor{keywordtype}{int} i,j,width,height;
+55     width=piece->\hyperlink{structcontainer_a1e938d250074e70b9778df1b59121744}{size}/piece->\hyperlink{structcontainer_a0069496fb95c879cd33fb79ab726e81a}{len};
+56     height=piece->\hyperlink{structcontainer_a0069496fb95c879cd33fb79ab726e81a}{len};
+57     \textcolor{keywordtype}{char} * tmp=malloc(\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{char})*width*height);
+58     \textcolor{keywordflow}{for}(i=0;i<width;i++)
+59         \textcolor{keywordflow}{for}(j=0;j<height;j++)
+60           \textcolor{keywordflow}{if}(j== 0)
+61                 tmp[i*width+j]=piece->\hyperlink{structcontainer_aefae69762fe9c24169e2ca5418a711a1}{data}[width*(width-1)+i];
+62 
+63             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (j>0  && j <width)
+64                 tmp[i*width+j]=piece->\hyperlink{structcontainer_aefae69762fe9c24169e2ca5418a711a1}{data}[width*j+i];
+65             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(j == width)
+66                      tmp[i*width+j]=piece->\hyperlink{structcontainer_aefae69762fe9c24169e2ca5418a711a1}{data} [width-i];
+67 
+68     \textcolor{keywordflow}{for}(i=0;i<width;i++)
+69         \textcolor{keywordflow}{for}(j=0;j<height;j++)
+70             piece->\hyperlink{structcontainer_aefae69762fe9c24169e2ca5418a711a1}{data}[i*width+j]=tmp[i*width+j];
+71     free(tmp);
+72 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{head_8h_aca3f584034ddadfcf89951a1bf10f45c}\label{head_8h_aca3f584034ddadfcf89951a1bf10f45c}} 
+\index{head.\+h@{head.\+h}!update@{update}}
+\index{update@{update}!head.\+h@{head.\+h}}
+\subsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void update (\begin{DoxyParamCaption}\item[{\hyperlink{structcontainer}{container} $\ast$}]{grid }\end{DoxyParamCaption})}
+
+
+
+Definition at line 164 of file update.\+c.
+
+
+
+References delete\+Col(), delete\+Row(), detect\+Col(), detect\+Row(), and gravity().
+
+
+
+Referenced by main().
+
+
+\begin{DoxyCode}
+164                             \{
+165     \textcolor{keywordtype}{int} *index\_list\_row, *index\_list\_col;
+166     index\_list\_row = \hyperlink{update_8c_af9526652ed9443df3955c6cac0fe12c7}{detectRow}(grid);
+167     index\_list\_col = \hyperlink{update_8c_a0e35a2936fc69af30890ce30a082b594}{detectCol}(grid);
+168 
+169     \hyperlink{update_8c_ab48ae1a72cd2b7ff673d732f26d74ce0}{deleteRow}(grid, index\_list\_row);
+170     \hyperlink{update_8c_aa4713ce5d04fcf86179bc68fbd9bdbd4}{deleteCol}(grid, index\_list\_col);
+171 
+172     \hyperlink{update_8c_a4fa6bbed60f00a099cdd9d5d047c8a46}{gravity}(grid, index\_list\_row, index\_list\_col);
+173 
+174     free(index\_list\_row);
+175     free(index\_list\_col);
+176 \}
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=312pt]{head_8h_aca3f584034ddadfcf89951a1bf10f45c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=200pt]{head_8h_aca3f584034ddadfcf89951a1bf10f45c_icgraph}
+\end{center}
+\end{figure}
