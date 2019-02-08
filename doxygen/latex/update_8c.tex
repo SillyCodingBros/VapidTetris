@@ -1,8 +1,7 @@
 \hypertarget{update_8c}{}\section{update.\+c File Reference}
 \label{update_8c}\index{update.\+c@{update.\+c}}
 {\ttfamily \#include \char`\"{}head.\+h\char`\"{}}\newline
-Include dependency graph for update.\+c\+:
-\nopagebreak
+Include dependency graph for update.\+c\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -72,8 +71,7 @@ Referenced by update().
 126 
 127 \}
 \end{DoxyCode}
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -119,8 +117,7 @@ Referenced by update().
 60 
 61 \}
 \end{DoxyCode}
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -170,16 +167,14 @@ Referenced by update().
 86     \textcolor{keywordflow}{return} realloc(index, actual);
 87 \}
 \end{DoxyCode}
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=219pt]{update_8c_a0e35a2936fc69af30890ce30a082b594_cgraph}
 \end{center}
 \end{figure}
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -229,16 +224,14 @@ Referenced by update().
 24     \textcolor{keywordflow}{return} realloc(index, actual);
 25 \}
 \end{DoxyCode}
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=230pt]{update_8c_af9526652ed9443df3955c6cac0fe12c7_cgraph}
 \end{center}
 \end{figure}
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -276,7 +269,7 @@ Referenced by detect\+Col().
 97     max\_len = grid->\hyperlink{structcontainer_a0069496fb95c879cd33fb79ab726e81a}{len};
 98 
 99     \textcolor{keywordflow}{for}(j=index; j<max\_size; j+=max\_len)\{
-100         \textcolor{keywordflow}{if}(save\_data[j] != 1) \textcolor{keywordflow}{break};
+100         \textcolor{keywordflow}{if}(save\_data[j] == 0) \textcolor{keywordflow}{break};
 101     \}
 102     \textcolor{keywordflow}{if}(j >= max\_size)\{
 103         \textcolor{keywordflow}{return} 1;
@@ -284,8 +277,7 @@ Referenced by detect\+Col().
 105     \textcolor{keywordflow}{return} 0;
 106 \}
 \end{DoxyCode}
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -321,7 +313,7 @@ Referenced by detect\+Row().
 33     max\_len = grid->\hyperlink{structcontainer_a0069496fb95c879cd33fb79ab726e81a}{len};
 34 
 35     \textcolor{keywordflow}{for}(j=index; j< index + max\_len; ++j)\{
-36         \textcolor{keywordflow}{if}(save\_data[j] != 1) \textcolor{keywordflow}{break};
+36         \textcolor{keywordflow}{if}(save\_data[j] == 0) \textcolor{keywordflow}{break};
 37     \}
 38     \textcolor{keywordflow}{if}(j == index + max\_len)\{
 39         \textcolor{keywordflow}{return} 1;
@@ -329,8 +321,7 @@ Referenced by detect\+Row().
 41     \textcolor{keywordflow}{return} 0;
 42 \}
 \end{DoxyCode}
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -390,8 +381,7 @@ Referenced by update().
 160 
 161 \}
 \end{DoxyCode}
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -432,16 +422,14 @@ Referenced by main().
 175     free(index\_list\_col);
 176 \}
 \end{DoxyCode}
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=312pt]{update_8c_aca3f584034ddadfcf89951a1bf10f45c_cgraph}
 \end{center}
 \end{figure}
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode

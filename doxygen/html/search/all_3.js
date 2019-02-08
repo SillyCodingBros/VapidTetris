@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['gravity',['gravity',['../head_8h.html#afdd0072ee83eaeca8b99941e73bf2c8e',1,'gravity(container *grid, int *index_list_line, int *index_list_col):&#160;update.c'],['../update_8c.html#a4fa6bbed60f00a099cdd9d5d047c8a46',1,'gravity(container *grid, int *index_list_row, int *index_list_col):&#160;update.c']]]
+  ['fullcol',['fullCol',['../head_8h.html#aebb74ac9ba3f8c734beba4617a6bf439',1,'fullCol(container *grid, int index):&#160;update.c'],['../update_8c.html#aebb74ac9ba3f8c734beba4617a6bf439',1,'fullCol(container *grid, int index):&#160;update.c']]],
+  ['fullrow',['fullRow',['../head_8h.html#a35c79938c8ccc4683d509620aa6e15af',1,'fullRow(container *grid, int index):&#160;update.c'],['../update_8c.html#a35c79938c8ccc4683d509620aa6e15af',1,'fullRow(container *grid, int index):&#160;update.c']]]
 ];

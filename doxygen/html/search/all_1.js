@@ -1,10 +1,15 @@
 var searchData=
 [
-  ['data',['data',['../structcontainer.html#aefae69762fe9c24169e2ca5418a711a1',1,'container']]],
-  ['deletecol',['deleteCol',['../head_8h.html#a7bf753ec2f6d5d89d3cfbce8d704428f',1,'deleteCol(container *grid, int *indexList):&#160;update.c'],['../update_8c.html#aa4713ce5d04fcf86179bc68fbd9bdbd4',1,'deleteCol(container *grid, int *index_list):&#160;update.c']]],
-  ['deletecontainer',['deleteContainer',['../container_8c.html#a2a9dbe4ff3be91108eadb428d77debd6',1,'deleteContainer(container *item):&#160;container.c'],['../head_8h.html#a2a9dbe4ff3be91108eadb428d77debd6',1,'deleteContainer(container *item):&#160;container.c']]],
-  ['deleterow',['deleteRow',['../head_8h.html#a1b4ff27dd8eca8ec63460b424310d541',1,'deleteRow(container *grid, int *indexList):&#160;update.c'],['../update_8c.html#ab48ae1a72cd2b7ff673d732f26d74ce0',1,'deleteRow(container *grid, int *index_list):&#160;update.c']]],
-  ['detectcol',['detectCol',['../head_8h.html#a0e35a2936fc69af30890ce30a082b594',1,'detectCol(container *grid):&#160;update.c'],['../update_8c.html#a0e35a2936fc69af30890ce30a082b594',1,'detectCol(container *grid):&#160;update.c']]],
-  ['detectrow',['detectRow',['../head_8h.html#af9526652ed9443df3955c6cac0fe12c7',1,'detectRow(container *grid):&#160;update.c'],['../update_8c.html#af9526652ed9443df3955c6cac0fe12c7',1,'detectRow(container *grid):&#160;update.c']]],
-  ['display',['display',['../head_8h.html#ac2b3cb6c7ec0748f0c4c1a46e0997d70',1,'display(container *grid):&#160;user.c'],['../user_8c.html#ac2b3cb6c7ec0748f0c4c1a46e0997d70',1,'display(container *grid):&#160;user.c']]]
+  ['cases',['cases',['../structcell.html#af2fb9745b37f309905e02fed903748a5',1,'cell']]],
+  ['cell',['cell',['../structcell.html',1,'']]],
+  ['checkcollision',['checkCollision',['../container_8c.html#a7a74c6812adffb8d4419092b999a823b',1,'checkCollision(container *grid, container *piece, int x, int y):&#160;container.c'],['../head_8h.html#a7a74c6812adffb8d4419092b999a823b',1,'checkCollision(container *grid, container *piece, int x, int y):&#160;container.c']]],
+  ['color',['color',['../structcell.html#a17634ccb0012ada2dc1f042314d35c21',1,'cell']]],
+  ['container',['container',['../structcontainer.html',1,'']]],
+  ['container_2ec',['container.c',['../container_8c.html',1,'']]],
+  ['createcross',['createCross',['../container_8c.html#a6fe2743b89336db44793a23f4271b75a',1,'createCross():&#160;container.c'],['../head_8h.html#a6fe2743b89336db44793a23f4271b75a',1,'createCross():&#160;container.c']]],
+  ['createdot',['createDot',['../container_8c.html#a8a2fed74e961c8603aaaacd3ec243111',1,'createDot():&#160;container.c'],['../head_8h.html#a8a2fed74e961c8603aaaacd3ec243111',1,'createDot():&#160;container.c']]],
+  ['createl1',['createL1',['../container_8c.html#a7d1d76e4670bb877ca26b4e79db69927',1,'createL1():&#160;container.c'],['../head_8h.html#a7d1d76e4670bb877ca26b4e79db69927',1,'createL1():&#160;container.c']]],
+  ['createl2',['createL2',['../container_8c.html#a4a33c04f7b6aa23f5c9b912bf9c269d7',1,'createL2():&#160;container.c'],['../head_8h.html#a4a33c04f7b6aa23f5c9b912bf9c269d7',1,'createL2():&#160;container.c']]],
+  ['createline',['createLine',['../container_8c.html#ab4a57956d1d813e81c375d37dcd9dd83',1,'createLine():&#160;container.c'],['../head_8h.html#ab4a57956d1d813e81c375d37dcd9dd83',1,'createLine():&#160;container.c']]],
+  ['createu',['createU',['../container_8c.html#acdd60fa36d582876e0c842fadf1816d7',1,'createU():&#160;container.c'],['../head_8h.html#acdd60fa36d582876e0c842fadf1816d7',1,'createU():&#160;container.c']]]
 ];
