@@ -175,5 +175,6 @@ void sdlDisplay(SDL_Renderer* renderer, cell* SDL_grid, container* grid, contain
                 SDL_RenderFillRect( renderer, &(SDL_grid[(y*grid->len)+x].cases));
         }
     }
+    
     SDL_RenderPresent(renderer);
 }
