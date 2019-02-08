@@ -7,7 +7,9 @@
 CC = gcc
 
 # define any compile-time flags
-CFLAGS = -Wall -g
+CFLAGS = -Wall -g -O2 `sdl2-config --cflags`
+
+LFLAGS = -O2 `sdl2-config --libs` -lSDL2_image
 
 # define any directories containing header files other than /usr/include
 INCLUDES =

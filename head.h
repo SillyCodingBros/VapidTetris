@@ -65,7 +65,7 @@ void place(container * grid, container * piece, int x, int y);
 
 /* fonction de user.c */
 void display(container* grid);
-void seize(container *grid, container *piece);
-void rotate(container* item);
+void rotate_90(container *piece);
+void rotate_180(container *piece);
 
 #endif

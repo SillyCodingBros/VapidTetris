@@ -26,7 +26,7 @@ void display(container* grid){
             printf(" ");
         }
     }
-    printf("|%d\n",i/grid->len);
+    printf("|%d\n",i/grid->len-1);
     for (i = 0; i < grid->len+2; i++) {
         printf("-");
     }
