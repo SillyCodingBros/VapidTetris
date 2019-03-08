@@ -18,6 +18,8 @@ void display(container* grid){
             case 2:
                 toShow = "31m";
                 break;
+            default:
+                break;
         }
 
         if (grid->data[i] > 0){
