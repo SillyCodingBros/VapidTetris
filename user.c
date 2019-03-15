@@ -1,8 +1,9 @@
 #include "head.h"
 
 void display(container* grid){
+    char *toShow = "36m";
     int i;
-
+    
     for (i = 0; i < grid->len+2; i++) {
         printf("-");
     }
@@ -10,80 +11,77 @@ void display(container* grid){
 
     for (i = 0; i < grid->size; i++) {
         if (i % grid->len == 0 && i != 0) {
-            printf("|%d\n|", (i/grid->len)-1);  // Erreur ! Affichage de 23 puis 25 dans les deux dernières lignes de la zone de jeu, et même phénomène pour la preview pièce
+            printf("|%d\n|", (i/grid->len)-1);
         }
+
+        switch (grid->data[i]) {
+            case 2:
+                toShow = "31m";
+                break;
+        }
+
         if (grid->data[i] > 0){
-            printf("X");
+            printf("\033[%sX", toShow);
         }else{
             printf(" ");
         }
     }
-    printf("|%d\n",i/grid->len-1);
+    printf("|%d\n",i/grid->len);
     for (i = 0; i < grid->len+2; i++) {
         printf("-");
     }
     printf("\n");
 }
-/*
-void rotate_180(container *piece)
-{
-    int i,j,width,height;
-    width=piece->size/piece->len;
-    height=piece->len;
-    char * tmp=malloc(sizeof(char)*width*height);
-
-    for(i=0;i<width;i++)
-        for(j=0;j<height;j++)
-            // diff
-            tmp[i*width+j]=piece->data[i+width*j];
-
-    for(i=0;i<width;i++)
-        for(j=0;j<height;j++)
-            piece->data[i*width+j]=tmp[i*width+j];
-    free(tmp);
-}
 
 void rotate_90(container *piece)
-{
-    int i,j,width,height;
-    width=piece->size/piece->len;
+{   
+    int i,j,height;
+    
     height=piece->len;
-    char * tmp=malloc(sizeof(char)*width*height);
-    for(i=0;i<width;i++)
-        for(j=0;j<height;j++)
-            // différent
-          if(j== 0)
-                tmp[i*width+j]=piece->data[width*(width-1)+i];
+    char * tmp=malloc(sizeof(char)*height*height);
+     for(i=0;i<piece->size;i++)
+        tmp[i]=0;
+    miroir(piece);
+    for(i=0;i<height;i++)
+        for(j=0;j<height;j++)   
+            tmp[i*height+j]=piece->data[i+height*j];
 
-            else if (j>0  && j <width)
-                tmp[i*width+j]=piece->data[width*j+i];
-            else if(j == width)
-                     tmp[i*width+j]=piece->data [width-i];
-
-    for(i=0;i<width;i++)
-        for(j=0;j<height;j++)
-            piece->data[i*width+j]=tmp[i*width+j];
-    free(tmp);
-} */
-// ce blabla inutile devient ...
-
-void rotate(container * piece){
-    int i,j,width,height;
-    width=piece->size/piece->len;
-    height=piece->len;
-    char * tmp=malloc(sizeof(char)*width*height);
-    for(i=0;i<width;i++)
-        for(j=0;j<height;j++){
-            if(j== 0)
-                tmp[i*width+j]=piece->data[width*(width-1)+i];
-
-            else if (j>0  && j <width)
-                tmp[i*width+j]=piece->data[width*j+i];
-            else if(j == width)
-                tmp[i*width+j]=piece->data [width-i]; 
+    for(i=0;i<piece->size;i++)
+            piece->data[i]=tmp[i];
+    j=0;
+    for(i=0;i<height;i++)    
+        if(piece->data[i]==0)
+            j++;
+    if(j==height){
+          for(i=height;i<piece->size;i++)
+            piece->data[i-height]=tmp[i];
+           for(i=height*height-height;i<piece->size;i++)
+            piece->data[i]=0;
         }
-    for(i=0;i<width;i++)
-        for(j=0;j<height;j++)
-            piece->data[i*width+j]=tmp[i*width+j];
-    free(tmp);
+    free(tmp);  
 }
+
+void miroir(container*piece)
+{
+    int i,j,height;
+    height=piece->len;
+    char * tmp=malloc(sizeof(char)*height*height);
+    for(i=0;i<piece->size;i++)
+        tmp[i]=0;   
+        
+    for(i=0;i<height;i++)
+        for(j=0;j<height;j++)   
+            tmp[i*height+j]=piece->data[i*height+height-1-j];
+    for(i=0;i<piece->size;i++)
+            piece->data[i]=tmp[i];
+
+    free(tmp);  
+
+}
+
+
+void info()
+{
+    printf("pour se deplacer a droite a 'd'\npour se deplacer a gauche a 'q'\npour se deplacer en haut a 'z'\npour se deplcaer en bas appuyer sur 's' \npour faire une rotation a 90 appuyer sur 'r' \npour faire un miroir appuyer sur 'm' \npour placer une piece appuer sur 'p ' \n");
+}
+

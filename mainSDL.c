@@ -1,20 +1,10 @@
 #include <SDL2/SDL.h>
 #include "head.h"
 
-
-/**
- * \struct cell
- * \brief Objet de stockage de cellule.
- *
- * cell permet de stocker les informations pour l'affichage.
- */
-
 typedef struct{
-    /// Stocke les informations de la bordure : dimension, coordonnées.
     SDL_Rect border;
-    /// Stocke les informations de la case : dimension, coordonnées.
     SDL_Rect cases;
-    /// Stocke la couleur de la case avec .
+    SDL_Color color;
     Uint8 r,g,b;
 }cell;
 
@@ -22,7 +12,8 @@ cell* initDisplay(container* grid, int cellSize);
 void sdlDisplay(SDL_Renderer* renderer, cell* SDL_grid, container* grid, container* piece, SDL_Color color, int px, int py);
 void sdlUpdateDisplay(cell* SDL_grid,container* piece, container* grid, SDL_Color color, int px, int py);
 
-int main(int argc, char const *argv[]) {
+int main(int argc, char const *argv[]) 
+{
 
     container play_grid, play_piece;
     int piece_x, piece_y;
@@ -36,11 +27,11 @@ int main(int argc, char const *argv[]) {
 
     initContainer(WIDTH, HEIGHT, &play_grid);
     SDL_grid = initDisplay(&play_grid,30);
-    if (SDL_grid == NULL) {
+    if(SDL_grid == NULL) {
         printf("initDisplay error\n");
         exit(1);
     }
-
+    info();
     SDL_Window* window = NULL;
     window = SDL_CreateWindow( "VapidTetris", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, WIDTH*32+20, HEIGHT*32+20, SDL_WINDOW_SHOWN);
 
@@ -67,18 +58,24 @@ int main(int argc, char const *argv[]) {
                     case 'd': piece_x+=1; break;
                     case 'z': piece_y-=1; break;
                     case 's': piece_y+=1; break;
-                    case 'r': rotate(&play_piece); break;
                     case 'p':
                         if (checkCollision(&play_grid, &play_piece, piece_x, piece_y)) {
                             printf("Can't fit here!\n");
-                        }else{
+                        }
+                        else{
                             place(&play_grid, &play_piece, piece_x, piece_y);
                             sdlUpdateDisplay(SDL_grid,&play_piece,&play_grid, color, piece_x, piece_y);
                             play_piece = randomPiece();
                             update(&play_grid);
                         }
+                        break;  
+                    case 'm':
+                        miroir(&play_piece);
+
                         break;
-                }
+                    case 'r':
+                    rotate_90(&play_piece);
+                    break ;                       }
                 if (piece_x<0) {
                     piece_x = 0;
                 }
@@ -175,6 +172,5 @@ void sdlDisplay(SDL_Renderer* renderer, cell* SDL_grid, container* grid, contain
                 SDL_RenderFillRect( renderer, &(SDL_grid[(y*grid->len)+x].cases));
         }
     }
-    
     SDL_RenderPresent(renderer);
 }
