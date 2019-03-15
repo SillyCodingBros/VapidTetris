@@ -74,21 +74,13 @@ void rotate(container * piece, int r){
     char * tmp=malloc(sizeof(char)*width*height);
     for(i=0;i<width;i++)
         for(j=0;j<height;j++){
-            // pour 90
-            if(r == 1){
-                            // différent
-                if(j== 0)
-                    tmp[i*width+j]=piece->data[width*(width-1)+i];
+            if(j== 0)
+                tmp[i*width+j]=piece->data[width*(width-1)+i];
 
-                else if (j>0  && j <width)
-                    tmp[i*width+j]=piece->data[width*j+i];
-                else if(j == width)
-                    tmp[i*width+j]=piece->data [width-i];
-            }
-            // pour 180
-            if(r == 2){
-                tmp[i*width+j]=piece->data[i+width*j];
-            }
+            else if (j>0  && j <width)
+                tmp[i*width+j]=piece->data[width*j+i];
+            else if(j == width)
+                tmp[i*width+j]=piece->data [width-i]; 
         }
     for(i=0;i<width;i++)
         for(j=0;j<height;j++)
