@@ -1,5 +1,32 @@
 #include "head.h"
 
+int* detect(container* grid, int step, int size){
+
+	int *index, actual, i;
+
+	//Index
+	actual = 1;
+	index = malloc((size/step + 1)*sizeof(int));
+
+	for(i=0; i<size; i += step){
+		if(step == 1){
+			if(fullCol(grid, i)){
+				index[actual] = i;
+				++actual;
+			}
+		}
+		else{
+			if(fullRow(grid, i)){
+				index[actual] = i;
+				++actual;
+			}
+		}
+	}
+	index[0] = actual;
+
+	return realloc(index, actual);
+}
+
 //Fonction row
 int* detectRow(container* grid){
 
@@ -60,7 +87,21 @@ void deleteRow(container* grid, int* index_list){
 
 }
 
+void delete(container* grid, int* index_list, int step, int lineSize){
+	int actual, max_size, i, j, k;
+	char *save_data;
 
+	//Sauvegarde
+	save_data = grid->data;
+
+	max_size = index_list[0];
+	for(i=1; i<max_size; ++i){
+		actual = index_list[i];
+		for(j=actual, k=0; k < lineSize; j += step, ++k){
+			save_data[j] = 0;
+		}
+	}
+}
 
 //Fonction Col
 int* detectCol(container* grid){
@@ -163,11 +204,13 @@ void gravity(container* grid, int* index_list_row, int* index_list_col){
 
 void update(container *grid){
 	int *index_list_row, *index_list_col;
-	index_list_row = detectRow(grid);
-	index_list_col = detectCol(grid);
+	index_list_row = detect(grid, grid->len, grid->size);//detectRow(grid);
+	index_list_col = detect(grid, 1, grid->len);//detectCol(grid);
 
-	deleteRow(grid, index_list_row);
-	deleteCol(grid, index_list_col);
+	/*deleteRow(grid, index_list_row);
+	deleteCol(grid, index_list_col);*/
+	delete(grid, index_list_row, 1, grid->len);
+	delete(grid, index_list_col, grid->len, grid->size/grid->len);
 
 	gravity(grid, index_list_row, index_list_col);
 
