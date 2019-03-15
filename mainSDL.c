@@ -12,7 +12,7 @@ cell* initDisplay(container* grid, int cellSize);
 void sdlDisplay(SDL_Renderer* renderer, cell* SDL_grid, container* grid, container* piece, SDL_Color color, int px, int py);
 void sdlUpdateDisplay(cell* SDL_grid,container* piece, container* grid, SDL_Color color, int px, int py);
 
-int main(int argc, char const *argv[]) 
+int main(int argc, char const *argv[])
 {
 
     container play_grid, play_piece;
@@ -41,7 +41,7 @@ int main(int argc, char const *argv[])
     play_piece = randomPiece();
     piece_x = 0;
     piece_y = 0;
-    color.r = 255;
+    color.r = 0;
     color.g = 0;
     color.b = 0;
 
@@ -68,7 +68,7 @@ int main(int argc, char const *argv[])
                             play_piece = randomPiece();
                             update(&play_grid);
                         }
-                        break;  
+                        break;
                     case 'm':
                         miroir(&play_piece);
 
@@ -142,7 +142,7 @@ void sdlDisplay(SDL_Renderer* renderer, cell* SDL_grid, container* grid, contain
         for (int x = 0; x < grid->len; x++) {
 
             if (x>=px && x<(px+piece->len) && y>=py && y<(py+(piece->size/piece->len)) && piece->data[((y-py)*piece->len)+x-px]) {
-                SDL_SetRenderDrawColor( renderer, color.r, color.g, color.b, 255 );
+                SDL_SetRenderDrawColor( renderer, 255, 0, 0, 255 );
             }else{
                 SDL_SetRenderDrawColor( renderer, 0, 0, 0, 255 );
             }
@@ -169,7 +169,10 @@ void sdlDisplay(SDL_Renderer* renderer, cell* SDL_grid, container* grid, contain
             else{
                 SDL_SetRenderDrawColor( renderer, 123, 123, 123, 255 );
             }
-                SDL_RenderFillRect( renderer, &(SDL_grid[(y*grid->len)+x].cases));
+            if (x>=px && x<(px+piece->len) && y>=py && y<(py+(piece->size/piece->len)) && piece->data[((y-py)*piece->len)+x-px]) {
+                SDL_SetRenderDrawColor( renderer, color.r, color.g, color.b, 255);
+            }
+            SDL_RenderFillRect( renderer, &(SDL_grid[(y*grid->len)+x].cases));
         }
     }
     SDL_RenderPresent(renderer);
