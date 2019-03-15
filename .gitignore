@@ -18,6 +18,10 @@
 
 # Libraries
 *.lib
+
+# Doxygen
+doxygen/
+
 *.a
 *.la
 *.lo
