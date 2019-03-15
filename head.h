@@ -51,12 +51,7 @@ container randomPiece();
   * remplis les cases avec des 1 (case pleine) pour donner forme a la pièce.
   * Une fois formée, cette pièce est renvoyée à randomPiece. */
 
-container createU();
-container createL1();
-container createL2();
-container createCross();
-container createDot();
-container createLine();
+container createPiece(int num_piece);
 
 /* free le data de la pièce passée en argument */
 void deleteContainer(container* item);

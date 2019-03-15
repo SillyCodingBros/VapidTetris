@@ -67,7 +67,7 @@ int main(int argc, char const *argv[]) {
                     case 'd': piece_x+=1; break;
                     case 'z': piece_y-=1; break;
                     case 's': piece_y+=1; break;
-                    case 'r': rotate_180(&play_piece); break;
+                    case 'r': rotate(&play_piece); break;
                     case 'p':
                         if (checkCollision(&play_grid, &play_piece, piece_x, piece_y)) {
                             printf("Can't fit here!\n");
