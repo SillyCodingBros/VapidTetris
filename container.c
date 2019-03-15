@@ -13,7 +13,7 @@ void initContainer(int width, int height, container* item){
 container randomPiece(){
 	container piece;
 	srand(time(NULL));
-	int random = rand() % 6;
+	int random = 6 * (rand() / (RAND_MAX + 1.0));
 	switch (random){
 		case 0 :
 			piece = createU();
