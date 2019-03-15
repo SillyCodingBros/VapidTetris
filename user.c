@@ -1,7 +1,6 @@
 #include "head.h"
 
 void display(container* grid){
-    char *toShow = "36m";
     int i;
 
     for (i = 0; i < grid->len+2; i++) {
@@ -14,14 +13,8 @@ void display(container* grid){
             printf("|%d\n|", (i/grid->len)-1);  // Erreur ! Affichage de 23 puis 25 dans les deux dernières lignes de la zone de jeu, et même phénomène pour la preview pièce
         }
 
-        switch (grid->data[i]) {
-            case 2:
-                toShow = "31m";
-                break;
-        }
-
         if (grid->data[i] > 0){
-            printf("\033[%sX", toShow);
+            printf("X");
         }else{
             printf(" ");
         }
