@@ -34,7 +34,7 @@ void display(container* grid){
     }
     printf("\n");
 }
-
+/* 
 void rotate_180(container *piece)
 {
     int i,j,width,height;
@@ -74,7 +74,8 @@ void rotate_90(container *piece)
         for(j=0;j<height;j++)
             piece->data[i*width+j]=tmp[i*width+j];
     free(tmp);
-}
+} */
+// ce blabla inutile devient ...
 
 void rotate(container * piece, int r){
     int i,j,width,height;
