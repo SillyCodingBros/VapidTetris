@@ -67,7 +67,7 @@ void rotate_90(container *piece)
 } */
 // ce blabla inutile devient ...
 
-void rotate(container * piece, int r){
+void rotate(container * piece){
     int i,j,width,height;
     width=piece->size/piece->len;
     height=piece->len;
