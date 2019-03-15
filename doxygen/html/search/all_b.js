@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['update',['update',['../head_8h.html#aca3f584034ddadfcf89951a1bf10f45c',1,'update(container *grid):&#160;update.c'],['../update_8c.html#aca3f584034ddadfcf89951a1bf10f45c',1,'update(container *grid):&#160;update.c']]],
-  ['update_2ec',['update.c',['../update_8c.html',1,'']]],
-  ['user_2ec',['user.c',['../user_8c.html',1,'']]]
+  ['sdldisplay',['sdlDisplay',['../mainSDL_8c.html#ab961411fd9020c4b2d555cee4b177ab4',1,'mainSDL.c']]],
+  ['sdlupdatedisplay',['sdlUpdateDisplay',['../mainSDL_8c.html#a1e6fb88709bf05a801d646c538927764',1,'mainSDL.c']]],
+  ['size',['size',['../structcontainer.html#a1e938d250074e70b9778df1b59121744',1,'container']]]
 ];

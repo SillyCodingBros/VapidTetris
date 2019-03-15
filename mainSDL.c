@@ -1,10 +1,20 @@
 #include <SDL2/SDL.h>
 #include "head.h"
 
+
+/**
+ * \struct cell
+ * \brief Objet de stockage de cellule.
+ *
+ * cell permet de stocker les informations pour l'affichage.
+ */
+
 typedef struct{
+    /// Stocke les informations de la bordure : dimension, coordonnées.
     SDL_Rect border;
+    /// Stocke les informations de la case : dimension, coordonnées.
     SDL_Rect cases;
-    SDL_Color color;
+    /// Stocke la couleur de la case avec .
     Uint8 r,g,b;
 }cell;
 
@@ -57,6 +67,7 @@ int main(int argc, char const *argv[]) {
                     case 'd': piece_x+=1; break;
                     case 'z': piece_y-=1; break;
                     case 's': piece_y+=1; break;
+                    case 'r': rotate_180(&play_piece); break;
                     case 'p':
                         if (checkCollision(&play_grid, &play_piece, piece_x, piece_y)) {
                             printf("Can't fit here!\n");
@@ -164,5 +175,6 @@ void sdlDisplay(SDL_Renderer* renderer, cell* SDL_grid, container* grid, contain
                 SDL_RenderFillRect( renderer, &(SDL_grid[(y*grid->len)+x].cases));
         }
     }
+    
     SDL_RenderPresent(renderer);
 }
