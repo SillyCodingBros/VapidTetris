@@ -12,6 +12,7 @@ void initContainer(int width, int height, container* item){
 
 container createPiece(int num_piece){
 	container piece;
+	srand(time(NULL));	
 	char color = rand()%6+1;
 
 	if (num_piece == 0){
