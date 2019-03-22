@@ -75,9 +75,8 @@ void deleteContainer(container * item){
 }
 
 int checkCollision(container * grid, container * piece, int x, int y){
-	int i,j;
-	for (i = 0; i < piece->size/piece->len; i++) {
-		for (j = 0; j < piece->len; j++) {
+	for (int i = 0; i < piece->size/piece->len; i++) {
+		for (int j = 0; j < piece->len; j++) {
 			if (i+y < 0 || i+y >= (grid->size/grid->len) || j+x < 0 || j+x >= grid->len) {
 				return 1;
 			}
@@ -90,9 +89,8 @@ int checkCollision(container * grid, container * piece, int x, int y){
 }
 
 void place(container * grid, container * piece, int x, int y) {
-	int i,j;
-	for (i = 0; i < piece->size/piece->len; i++) {
-		for (j = 0; j < piece->len; j++) {
+	for (int i = 0; i < piece->size/piece->len; i++) {
+		for (int j = 0; j < piece->len; j++) {
 			if (piece->data[(i*piece->len)+j] != 0) {
 				grid->data[((i+y)*grid->len)+j+x] = piece->data[(i*piece->len)+j];
 			}
