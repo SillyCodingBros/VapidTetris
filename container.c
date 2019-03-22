@@ -10,64 +10,110 @@ void initContainer(int width, int height, container* item){
 	}
 }
 
-container createPiece(int num_piece){
+container randomPiece(){
 	container piece;
-	char color = rand()%6+1;
+	srand(time(NULL));
+	int random = rand() % 6;
+	switch (random){
+		case 0 :
+			piece = createU();
+			return piece;
+		case 1 :
+			piece = createL1();
+			return piece;
+		case 2 :
+			piece = createL2();
+			return piece;
+		case 3 :
+			piece = createCross();
+			return piece;
+		case 4:
+			piece = createDot();
+			return piece;
+		case 5 :
+			piece = createLine();
+			return piece;
+		default :
+			printf("Error : could not generate cooresponding piece for int : %d \n", random);
+			exit(0);
+	}
+}
 
-	if (num_piece == 0){
-		initContainer(3, 3, &piece);
-		piece.data[0] = color;
-		piece.data[2] = color;
-		piece.data[3] = color;
-		piece.data[5] = color;
-		piece.data[6] = color;
-		piece.data[7] = color;
-		piece.data[8] = color;
-	}
-	else if (num_piece == 1){
-		initContainer(3, 2, &piece);
-		piece.data[0] = color;
-		piece.data[3] = color;
-		piece.data[4] = color;
-		piece.data[5] = color;
-	}
-	else if (num_piece == 2){
-		initContainer(3, 2, &piece);
-		piece.data[2] = color;
-		piece.data[3] = color;
-		piece.data[4] = color;
-		piece.data[5] = color;
-	}
-	else if (num_piece == 3){
-		initContainer(5, 5, &piece);
-		piece.data[2] = color;
-		piece.data[7] = color;
-		piece.data[10] = color;
-		piece.data[11] = color;
-		piece.data[12] = color;
-		piece.data[13] = color;
-		piece.data[14] = color;
-		piece.data[17] = color;
-		piece.data[22] = color;
-		piece.data[24] = 0;
-	}
-	else if (num_piece == 4){
-		initContainer(1, 1, &piece);
-		piece.data[0] = color;
-		return piece;
-	}
-	else if (num_piece == 5){
-		initContainer(1, 2, &piece);
-		piece.data[0] = color;
-		piece.data[1] = color;
-	}
+container createU(){
+	char color;
+	container piece;
+
+	color = rand()%6+1;
+	initContainer(3, 3, &piece);
+	piece.data[0] = color;
+	piece.data[2] = color;
+	piece.data[3] = color;
+	piece.data[5] = color;
+	piece.data[6] = color;
+	piece.data[7] = color;
+	piece.data[8] = color;
 	return piece;
 }
 
-container randomPiece(){
-	srand(time(NULL));
-	int random = 6 * (rand() / (RAND_MAX + 1.0));
-	return createPiece(random);
+container createL1(){
+	container piece;
+
+	char color = rand()%6+1;
+	initContainer(3, 3, &piece);
+	piece.data[0] = color;
+	piece.data[3] = color;
+	piece.data[4] = color;
+	piece.data[5] = color;
+	return piece;
+}
+
+container createL2(){
+	container piece;
+
+	char color = rand()%6+1;
+	initContainer(3, 3, &piece);
+	piece.data[2] = color;
+	piece.data[3] = color;
+	piece.data[4] = color;
+	piece.data[5] = color;
+	return piece;
+}
+
+container createCross(){
+	container piece;
+
+	char color = rand()%6+1;
+	initContainer(5, 5, &piece);
+	piece.data[2] = color;
+	piece.data[7] = color;
+	piece.data[10] = color;
+	piece.data[11] = color;
+	piece.data[12] = color;
+	piece.data[13] = color;
+	piece.data[14] = color;
+	piece.data[17] = color;
+	piece.data[22] = color;
+	piece.data[24] = 0;
+	return piece;
+}
+
+container createDot(){
+	container piece;
+
+	char color = rand()%6+1;
+	initContainer(1, 1, &piece);
+	piece.data[0] = color;
+	return piece;
+}
+
+container createLine(){
+	container piece;
+
+	char color = rand()%6+1;
+	initContainer(2, 2, &piece);
+	piece.data[0] = color;
+	piece.data[1] = color;
+	return piece;
 }
 
 void deleteContainer(container * item){
