@@ -32,32 +32,23 @@ void display(container* grid){
     }
     printf("\n");
 }
-
+void swap(char *i,char*j){
+    char tmp;
+    tmp=*i;
+    *i=*j;
+    *j=tmp;
+}
 void rotate_90(container *piece)
 {   
-    int i,j,height;
-    
+    int i,j,height;    
     height=piece->len;
-    char * tmp=malloc(sizeof(char)*height*height);
-     for(i=0;i<piece->size;i++)
-        tmp[i]=0;
+    char *tmp=malloc(sizeof(char)*height*height);
     miroir(piece);
-    for(i=0;i<height;i++)
-        for(j=0;j<height;j++)   
-            tmp[i*height+j]=piece->data[i+height*j];
-
-    for(i=0;i<piece->size;i++)
-            piece->data[i]=tmp[i];
-    j=0;
-    for(i=0;i<height;i++)    
-        if(piece->data[i]==0)
-            j++;
-    if(j==height){
-          for(i=height;i<piece->size;i++)
-            piece->data[i-height]=tmp[i];
-           for(i=height*height-height;i<piece->size;i++)
-            piece->data[i]=0;
-        }
+    for ( i = 0; i <piece->size; ++i)
+    {
+        if(i/piece->len<1)
+                swap(&piece->data[i],&piece->data[i+piece->len]);
+    }
     free(tmp);  
 }
 
@@ -67,8 +58,8 @@ void miroir(container*piece)
     height=piece->len;
     char * tmp=malloc(sizeof(char)*height*height);
     for(i=0;i<piece->size;i++)
-        tmp[i]=0;   
-        
+        tmp[i]=0; 
+
     for(i=0;i<height;i++)
         for(j=0;j<height;j++)   
             tmp[i*height+j]=piece->data[i*height+height-1-j];
