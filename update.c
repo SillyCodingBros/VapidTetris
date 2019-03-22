@@ -1,5 +1,40 @@
 #include "head.h"
 
+//Fonction de test
+void fillGrid(container* play_grid){
+
+	int max_size = play_grid->size;
+	int max_len = play_grid->len;
+	int max_height = max_size/max_len;
+
+	int holeX = max_len/2;
+	int holeY = max_height/2;
+
+
+	for(int j = -2; j < 3; ++j){
+		for(int i = 0; i < max_len; ++i){
+			//if(i > holeX-3 && i < holeX+3) continue;
+			play_grid->data[max_len*(holeY+j) + i] = 1;
+		}
+	}
+
+	for(int j = -2; j < 3; ++j){
+		for(int i = 0; i < max_height; ++i){
+			//if(i > holeY-3 && i < holeY+3) continue;
+			play_grid->data[max_len*i + (holeX+j)] = 1;
+		}
+	}
+
+	for(int i = -2; i < 3; ++i){
+		play_grid->data[max_len*holeY + (holeX+i)] = 0;
+	}
+
+	for(int i = -2; i < 3; ++i){
+		play_grid->data[max_len*(holeY+i) + holeX] = 0;
+	}
+
+}
+
 int* detect(container* grid, int step, int size){
 
 	int *index, actual, i;

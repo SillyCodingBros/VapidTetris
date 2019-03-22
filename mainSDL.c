@@ -12,8 +12,16 @@ cell* initDisplay(container* grid, int cellSize);
 void sdlDisplay(SDL_Renderer* renderer, cell* SDL_grid, container* grid, container* piece, SDL_Color color, int px, int py);
 void sdlUpdateDisplay(cell* SDL_grid,container* piece, container* grid, SDL_Color color, int px, int py);
 
-int main(int argc, char const *argv[])
-{
+int main(int argc, char const *argv[]){
+
+	int mode;
+
+	if(argc > 1){
+		mode = atoi(argv[1]);
+	}
+	else{
+		mode = 0;
+	}
 
     container play_grid, play_piece;
     int piece_x, piece_y;
@@ -26,7 +34,12 @@ int main(int argc, char const *argv[])
     }
 
     initContainer(WIDTH, HEIGHT, &play_grid);
-    SDL_grid = initDisplay(&play_grid,30);
+
+    if(mode == 1){
+    	fillGrid(&play_grid);
+    }
+
+    SDL_grid = initDisplay(&play_grid, 30);
     if(SDL_grid == NULL) {
         printf("initDisplay error\n");
         exit(1);
@@ -38,12 +51,17 @@ int main(int argc, char const *argv[])
     SDL_Renderer* renderer = NULL;
     renderer =  SDL_CreateRenderer( window, -1, SDL_RENDERER_ACCELERATED);
 
-    play_piece = randomPiece();
-    piece_x = 0;
-    piece_y = 0;
-    color.r = 0;
-    color.g = 0;
-    color.b = 0;
+    if(mode == 1){
+    	play_piece = createPiece(3);
+    }
+    else{
+	    play_piece = randomPiece();
+	    piece_x = 0;
+	    piece_y = 0;
+	    color.r = 0;
+	    color.g = 0;
+	    color.b = 0;
+	}
 
     sdlDisplay(renderer, SDL_grid, &play_grid, &play_piece, color, piece_x, piece_y);
 

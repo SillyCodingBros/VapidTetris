@@ -33,6 +33,10 @@ void deleteCol(container* grid, int* indexList);
 ///S'occupe de replacer toute les cases de la grille selon les index qui ont été supprimé
 void gravity(container* grid, int* index_list_line, int* index_list_col);
 
+///Fonction de test pour Update
+void fillGrid(container* play_grid);
+
+
 ///Fonction qui s'occupe de tout les appelles de detection, de suppression et de replacer les grilles
 void update(container* grid);
 
