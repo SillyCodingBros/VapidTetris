@@ -60,8 +60,8 @@ void place(container * grid, container * piece, int x, int y);
 
 /* fonction de user.c */
 void display(container* grid);
-void rotate(container *piece); 
 void rotate_90(container *piece);
-void rotate_180(container *piece);
+void info();
 
+void miroir(container*piece);
 #endif
