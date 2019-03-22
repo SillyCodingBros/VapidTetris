@@ -62,6 +62,5 @@ void place(container * grid, container * piece, int x, int y);
 void display(container* grid);
 void rotate_90(container *piece);
 void info();
-
 void miroir(container*piece);
 #endif
