@@ -1,6 +1,6 @@
 #include <SDL2/SDL.h>
 #include "head.h"
-
+#include <unistd.h>
 typedef struct{
     SDL_Rect border;
     SDL_Rect cases;
@@ -49,7 +49,7 @@ int main(int argc, char const *argv[]){
     window = SDL_CreateWindow( "VapidTetris", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, WIDTH*32+20, HEIGHT*32+20, SDL_WINDOW_SHOWN);
 
     SDL_Renderer* renderer = NULL;
-    renderer =  SDL_CreateRenderer( window, -1, SDL_RENDERER_ACCELERATED);
+    renderer =  SDL_CreateRenderer ( window, -1, SDL_RENDERER_ACCELERATED);
 
     if(mode == 1){
     	play_piece = createPiece(3);
@@ -67,6 +67,7 @@ int main(int argc, char const *argv[]){
 
     int tmp = 1;
     while (tmp) {
+        sleep(0.1);
         SDL_Event event;
         SDL_PollEvent(&event);
         switch (event.type) {

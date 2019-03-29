@@ -2,7 +2,7 @@
 
 void initContainer(int width, int height, container* item){
 	item->len = width;
-	item->size = width * height;
+	item->size =width * height;
 	item->data = malloc(item->size * sizeof(char));
 	for (int i = 0; i < item->size; ++i)
 	{
@@ -57,7 +57,7 @@ container createPiece(int num_piece){
 		return piece;
 	}
 	else if (num_piece == 5){
-		initContainer(1, 2, &piece);
+		initContainer(2, 1, &piece);
 		piece.data[0] = color;
 		piece.data[1] = color;
 	}
