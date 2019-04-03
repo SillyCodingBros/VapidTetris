@@ -1,6 +1,10 @@
 #include "head.h"
 
-//Fonction de test
+/**	
+*	Paramètres : La grille de jeu
+*	Fonction de test pour update pour verifier le bon fonctionnement de la gravité
+*	Retour : Aucun
+**/
 void fillGrid(container* play_grid){
 
 	int max_size = play_grid->size;
@@ -10,30 +14,31 @@ void fillGrid(container* play_grid){
 	int holeX = max_len/2;
 	int holeY = max_height/2;
 
+	for(int k = 0; k < 10; ++k){
 
-	for(int j = -2; j < 3; ++j){
-		for(int i = 0; i < max_len; ++i){
-			//if(i > holeX-3 && i < holeX+3) continue;
-			play_grid->data[max_len*(holeY+j) + i] = 1;
+		printf("Adding block, %d time...\n", k);
+		for(int j = -2; j < 3; ++j){
+			for(int i = 0; i < max_len; ++i){
+				play_grid->data[max_len*(holeY+j) + i] = 1;
+			}
 		}
-	}
 
-	for(int j = -2; j < 3; ++j){
-		for(int i = 0; i < max_height; ++i){
-			//if(i > holeY-3 && i < holeY+3) continue;
-			play_grid->data[max_len*i + (holeX+j)] = 1;
+		for(int j = -2; j < 3; ++j){
+			for(int i = 0; i < max_height; ++i){
+				play_grid->data[max_len*i + (holeX+j)] = 1;
+			}
 		}
-	}
 
-	for(int i = -2; i < 3; ++i){
-		play_grid->data[max_len*holeY + (holeX+i)] = 0;
-	}
-
-	for(int i = -2; i < 3; ++i){
-		play_grid->data[max_len*(holeY+i) + holeX] = 0;
+		printf("Starting update...\n");
+		update(play_grid);
 	}
 
 }
+
+/**
+*	Fonction qui s'occupe de detecter toutes les colonnes ou lignes pleines.
+*	Retour : Pointeur sur le tableau contenant les index des lignes ou colonnes à supprimer.
+**/
 
 int* detect(container* grid, int step, int size){
 
@@ -62,7 +67,10 @@ int* detect(container* grid, int step, int size){
 	return realloc(index, actual);
 }
 
-//Fonction row
+/**
+*	Fonction remplacé par detect
+**/
+
 int* detectRow(container* grid){
 
 	int *index, actual, max_len, max_size, i;
@@ -86,6 +94,12 @@ int* detectRow(container* grid){
 	return realloc(index, actual);
 }
 
+
+/**
+*	Fonction prenant l'index d'une ligne et qui verifie si elle est pleine.
+*	Retour : 1 si ligne pleine, 0 si non.
+**/
+
 char fullRow(container* grid, int index){
 
 	int max_len, j;
@@ -102,6 +116,11 @@ char fullRow(container* grid, int index){
 	}
 	return 0;
 }
+
+
+/**
+*	fonction remplacé par delete
+**/
 
 void deleteRow(container* grid, int* index_list){
 
@@ -122,6 +141,12 @@ void deleteRow(container* grid, int* index_list){
 
 }
 
+
+/**
+*	Fonction s'occupant d'effacer tout les elements contenue dans la liste d'index.
+*	Retour : Aucun
+**/
+
 void delete(container* grid, int* index_list, int step, int lineSize){
 	int actual, max_size, i, j, k;
 	char *save_data;
@@ -138,7 +163,11 @@ void delete(container* grid, int* index_list, int step, int lineSize){
 	}
 }
 
-//Fonction Col
+
+/**
+*	Fonction remplacé par detect
+**/
+
 int* detectCol(container* grid){
 
 	int *index, actual, max_len, i;
@@ -162,6 +191,12 @@ int* detectCol(container* grid){
 	return realloc(index, actual);
 }
 
+
+/**
+*	Fonction prenant l'index d'une colonne et qui verifie si elle est pleine.
+*	Retour : 1 si colonne pleine, 0 si non.
+**/
+
 char fullCol(container* grid, int index){
 
 	int max_size, max_len, j;
@@ -180,6 +215,11 @@ char fullCol(container* grid, int index){
 	}
 	return 0;
 }
+
+
+/**
+*	Fonction remplacé par delete.
+**/
 
 void deleteCol(container* grid, int* index_list){
 
@@ -202,6 +242,11 @@ void deleteCol(container* grid, int* index_list){
 
 }
 
+
+/**
+*	Fonction qui s'occupe de faire descendre les ligne et colonnes maintenant vide.
+	Retour : Aucun.
+**/
 
 void gravity(container* grid, int* index_list_row, int* index_list_col){
 
@@ -237,11 +282,18 @@ void gravity(container* grid, int* index_list_row, int* index_list_col){
 }
 
 
-void update(container *grid){
-	int *index_list_row, *index_list_col;
-	index_list_row = detect(grid, grid->len, grid->size);//detectRow(grid);
-	index_list_col = detect(grid, 1, grid->len);//detectCol(grid);
+/** 
+*	Fonction core de Upadate, prend en paramètres la grille de jeu et fait tout les appels concernant
+*	la gravité dessus.
+*	Retour : Aucun.
+**/
 
+void update(container *grid){
+	int *index_list_row, *index_list_col;					//Les anciennes methodes ci-dessous :
+	index_list_row = detect(grid, grid->len, grid->size);	//detectRow(grid);
+	index_list_col = detect(grid, 1, grid->len);			//detectCol(grid);
+
+	//Ancienne méthode
 	/*deleteRow(grid, index_list_row);
 	deleteCol(grid, index_list_col);*/
 	delete(grid, index_list_row, 1, grid->len);
