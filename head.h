@@ -6,7 +6,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
-
+#include <assert.h>
 /* -------------- Define ----------- */
 #define WIDTH 25
 #define HEIGHT 20
@@ -60,6 +60,7 @@ container createPiece(int num_piece);
 /* free le data de la pièce passée en argument */
 void deleteContainer(container* item);
 int checkCollision(container * grid, container * piece, int x, int y);
+void test_checkCollision(void);
 void place(container * grid, container * piece, int x, int y);
 
 /* fonction de user.c */

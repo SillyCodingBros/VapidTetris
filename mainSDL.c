@@ -39,6 +39,11 @@ int main(int argc, char const *argv[]){
     	fillGrid(&play_grid);
     }
 
+    if (mode == 2) {
+        test_checkCollision();
+        printf("test checkCollision Success\n");
+    }
+
     SDL_grid = initDisplay(&play_grid, 30);
     if(SDL_grid == NULL) {
         printf("initDisplay error\n");

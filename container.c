@@ -88,6 +88,23 @@ int checkCollision(container * grid, container * piece, int x, int y){
 	return 0;
 }
 
+void test_checkCollision(void) {
+	container grid;
+	container piece;
+	initContainer(10,10,&grid);
+	for (int i = 0; i < 10; i++) {
+		for (int j = 0; j < 10; j++) {
+			for (int p = 0; p < 6; p++) {
+				piece = createPiece(p);
+				if (piece.len > 10-j || piece.size/piece.len > 10-i) {
+					break;
+				}
+				assert(checkCollision(&grid, &piece, j, i) == 0);
+			}
+		}
+	}
+}
+
 void place(container * grid, container * piece, int x, int y) {
 	for (int i = 0; i < piece->size/piece->len; i++) {
 		for (int j = 0; j < piece->len; j++) {
