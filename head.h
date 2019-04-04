@@ -56,6 +56,8 @@ container randomPiece();
   * Une fois formée, cette pièce est renvoyée à randomPiece. */
 
 container createPiece(int num_piece);
+/** Place 50 pièces dans une zone de test et vérifie si elles ont bien été posées */
+void test_Placement(void);
 
 /* free le data de la pièce passée en argument */
 void deleteContainer(container* item);

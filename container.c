@@ -14,7 +14,7 @@ container createPiece(int num_piece){
 	container piece;
 	char color = rand()%6+1;
 
-	if (num_piece == 0){
+	if (num_piece == 0){ // U
 		initContainer(3, 3, &piece);
 		piece.data[0] = color;
 		piece.data[2] = color;
@@ -24,21 +24,21 @@ container createPiece(int num_piece){
 		piece.data[7] = color;
 		piece.data[8] = color;
 	}
-	else if (num_piece == 1){
+	else if (num_piece == 1){ // L gauche
 		initContainer(3, 2, &piece);
 		piece.data[0] = color;
 		piece.data[3] = color;
 		piece.data[4] = color;
 		piece.data[5] = color;
 	}
-	else if (num_piece == 2){
+	else if (num_piece == 2){ // L droit
 		initContainer(3, 2, &piece);
 		piece.data[2] = color;
 		piece.data[3] = color;
 		piece.data[4] = color;
 		piece.data[5] = color;
 	}
-	else if (num_piece == 3){
+	else if (num_piece == 3){ // Croix
 		initContainer(5, 5, &piece);
 		piece.data[2] = color;
 		piece.data[7] = color;
@@ -51,12 +51,12 @@ container createPiece(int num_piece){
 		piece.data[22] = color;
 		piece.data[24] = 0;
 	}
-	else if (num_piece == 4){
+	else if (num_piece == 4){ // point
 		initContainer(1, 1, &piece);
 		piece.data[0] = color;
 		return piece;
 	}
-	else if (num_piece == 5){
+	else if (num_piece == 5){ // I
 		initContainer(2, 1, &piece);
 		piece.data[0] = color;
 		piece.data[1] = color;
@@ -109,6 +109,23 @@ void test_checkCollision(int fill) {
 				}else{
 					assert(checkCollision(&grid, &piece, j, i) == 0);
 				}
+			}
+		}
+	}
+}
+
+void test_Placement(void){
+	container grid, piece;
+	int nb_test, i, j;
+	for(nb_test = 0; nb_test< 100; nb_test++){
+		piece = randomPiece();
+		//piece = createPiece(2); // POUR DEMO 
+		initContainer(piece.len, (piece.size / piece.len), &grid);
+		place(&grid, &piece, 0, 0);
+		//grid.data[0] = 5; // POUR DEMO
+		for(i = 0; i < piece.size; i ++){
+			if(grid.data[i] != piece.data[i]){
+				printf("WRONG placement detected at test number %d, position %d, %d \n", nb_test, i, j);
 			}
 		}
 	}
