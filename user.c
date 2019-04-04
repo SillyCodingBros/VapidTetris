@@ -27,7 +27,7 @@ void display(container* grid){
     }
     printf("|%d\n",i/grid->len);
     for (i = 0; i < grid->len+2; i++) {
-        printf("-");    
+        printf("-");
     }
     printf("\n");
 }*/
@@ -38,13 +38,13 @@ void swap(char *i,char*j){
     *j=tmp;
 }
 void affiche(container*piece){
-   for (int i = 0; i < piece->size/piece->len; i++) 
+   for (int i = 0; i < piece->size/piece->len; i++)
         for (int j = 0; j < piece->len; j++)
             printf("%d\n",piece->data[piece->len*i+j] );
     }
 void rotate_90(container *piece)
 {
-    int i,j,height;    
+    int i,j,height;
     height=piece->len;
     char*tmp=malloc(sizeof(char)*height*height);
     miroir(piece);
@@ -54,21 +54,21 @@ void rotate_90(container *piece)
         {        piece->size=2;
             piece->len=1;
         }
-        else 
+        else
         {                *piece= createPiece(5);
 
-            
+
                   }
     }
    else  if(piece->size==piece->len*piece->len)
     {   for(i=0;i<height;i++)
-            for(j=0;j<height;j++)   
+            for(j=0;j<height;j++)
                 tmp[i*height+j]=piece->data[i+height*j];
 
         for(i=0;i<piece->size;i++)
             piece->data[i]=tmp[i];
         j=0;
-        for(i=0;i<height;i++)    
+        for(i=0;i<height;i++)
             if(piece->data[i]==0)
                 j++;
         if(j==height)
@@ -82,12 +82,12 @@ void rotate_90(container *piece)
     else
         {    //c'est pour les L
             for ( i = 0; i <piece->size; ++i)
-            {   
+            {
                 if(i/piece->len<1&&piece->size>2)
                     swap(&piece->data[i],&piece->data[i+piece->len]);
-            }       
+            }
         }
-    free(tmp);  
+    free(tmp);
 }
 
 void miroir(container*piece)
@@ -96,16 +96,41 @@ void miroir(container*piece)
     height=piece->len;
     char*tmp=malloc(sizeof(char)*height*height);
     for(i=0;i<piece->size;i++)
-        tmp[i]=0; 
+        tmp[i]=0;
 
     for(i=0;i<height;i++)
-        for(j=0;j<height;j++)   
+        for(j=0;j<height;j++)
             tmp[i*height+j]=piece->data[i*height+height-1-j];
     for(i=0;i<piece->size;i++)
             piece->data[i]=tmp[i];
 
-    free(tmp);  
+    free(tmp);
 
+}
+
+void rotation(container *piece) {
+    for (int i = 0; i < piece->size; i++) {
+        printf("%d ", piece->data[i]);
+    }
+    printf("\n %d\n", piece->len);
+    container tmp;
+    initContainer(piece->size/piece->len,piece->len,&tmp);
+
+    for (int i = (piece->len-1); i >= 0; i--) {
+        for (int j = 0; j < piece->size/piece->len; j++) {
+            tmp.data[(((piece->len-1)-i)*tmp.len)+j] = piece->data[(j*piece->len)+i];
+        }
+    }
+
+    for (int i = 0; i < tmp.size; i++) {
+        printf("%d ", tmp.data[i]);
+    }
+    printf("\n %d\n", tmp.len);
+    for (int i = 0; i < piece->size; i++) {
+        piece->data[i] = tmp.data[i];
+    }
+    piece->len = tmp.len;
+    free(tmp.data);
 }
 
 
@@ -113,4 +138,3 @@ void info()
 {
     printf("pour se deplacer a droite a 'd'\npour se deplacer a gauche a 'q'\npour se deplacer en haut a 'z'\npour se deplcaer en bas appuyer sur 's' \npour faire une rotation a 90 appuyer sur 'r' \npour faire un miroir appuyer sur 'm' \npour placer une piece appuer sur 'p ' \n");
 }
-

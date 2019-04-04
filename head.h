@@ -60,12 +60,13 @@ container createPiece(int num_piece);
 /* free le data de la pièce passée en argument */
 void deleteContainer(container* item);
 int checkCollision(container * grid, container * piece, int x, int y);
-void test_checkCollision(void);
+void test_checkCollision(int fill);
 void place(container * grid, container * piece, int x, int y);
 
 /* fonction de user.c */
 void display(container* grid);
 void rotate_90(container *piece);
+void rotation(container *piece);
 void info();
 void miroir(container*piece);
 #endif

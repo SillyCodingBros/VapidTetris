@@ -88,10 +88,15 @@ int checkCollision(container * grid, container * piece, int x, int y){
 	return 0;
 }
 
-void test_checkCollision(void) {
+void test_checkCollision(int fill) {
 	container grid;
 	container piece;
 	initContainer(10,10,&grid);
+	if (fill) {
+		for (int i = 0; i < grid.size; i++) {
+			grid.data[i] = 1;
+		}
+	}
 	for (int i = 0; i < 10; i++) {
 		for (int j = 0; j < 10; j++) {
 			for (int p = 0; p < 6; p++) {
@@ -99,7 +104,11 @@ void test_checkCollision(void) {
 				if (piece.len > 10-j || piece.size/piece.len > 10-i) {
 					break;
 				}
-				assert(checkCollision(&grid, &piece, j, i) == 0);
+				if (fill) {
+					assert(checkCollision(&grid, &piece, j, i) == 1);
+				}else{
+					assert(checkCollision(&grid, &piece, j, i) == 0);
+				}
 			}
 		}
 	}

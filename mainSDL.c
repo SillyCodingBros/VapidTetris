@@ -40,7 +40,8 @@ int main(int argc, char const *argv[]){
     }
 
     if (mode == 2) {
-        test_checkCollision();
+        test_checkCollision(0);
+        test_checkCollision(1);
         printf("test checkCollision Success\n");
     }
 
@@ -99,7 +100,11 @@ int main(int argc, char const *argv[]){
                         break;
                     case 'r':
                     rotate_90(&play_piece);
-                    break ;                       }
+                    break ;
+                    case 't':
+                    rotation(&play_piece);
+                    break ;
+                }
                 if (piece_x<0) {
                     piece_x = 0;
                 }
