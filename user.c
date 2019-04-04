@@ -136,5 +136,5 @@ void rotation(container *piece) {
 
 void info()
 {
-    printf("pour se deplacer a droite a 'd'\npour se deplacer a gauche a 'q'\npour se deplacer en haut a 'z'\npour se deplcaer en bas appuyer sur 's' \npour faire une rotation a 90 appuyer sur 'r' \npour faire un miroir appuyer sur 'm' \npour placer une piece appuer sur 'p ' \n");
+    printf("pour se deplacer a droite a 'd'\npour se deplacer a gauche a 'q' \npour se deplacer en haut a 'z'\npour se deplcaer en bas appuyer sur 's'\npour faire une rotation a 90 appuyer sur 'r' \npour faire un miroir appuyer sur 'm'\npour placer une piece appuer sur 'p ' \n");
 }
