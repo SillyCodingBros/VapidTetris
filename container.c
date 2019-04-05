@@ -61,12 +61,32 @@ container createPiece(int num_piece){
 		piece.data[0] = color;
 		piece.data[1] = color;
 	}
+	else if (num_piece == 6){ // X
+		initContainer(5, 5, &piece);
+		piece.data[0] = color;
+		piece.data[4] = color;
+		piece.data[6] = color;
+		piece.data[8] = color;
+		piece.data[12] = color;
+		piece.data[16] = color;
+		piece.data[18] = color;
+		piece.data[20] = color;
+		piece.data[24] = color;
+	}
+	else if (num_piece == 7){ // x
+		initContainer(3, 3, &piece);
+		piece.data[0] = color;
+		piece.data[2] = color;
+		piece.data[4] = color;
+		piece.data[6] = color;
+		piece.data[8] = color;
+	}
 	return piece;
 }
 
 container randomPiece(){
 	srand(time(NULL));
-	int random = 6 * (rand() / (RAND_MAX + 1.0));
+	int random = 8 * (rand() / (RAND_MAX + 1.0));
 	return createPiece(random);
 }
 
@@ -119,7 +139,7 @@ void test_Placement(void){
 	int nb_test, i, j;
 	for(nb_test = 0; nb_test< 100; nb_test++){
 		piece = randomPiece();
-		//piece = createPiece(2); // POUR DEMO 
+		//piece = createPiece(2); // POUR DEMO
 		initContainer(piece.len, (piece.size / piece.len), &grid);
 		place(&grid, &piece, 0, 0);
 		//grid.data[0] = 5; // POUR DEMO
