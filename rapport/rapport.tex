@@ -1,0 +1,45 @@
+\documentclass[11pt]{article}
+\title{\textbf{Vapid Tetris}\\ {\normalsize (Réalisation de Projet)}}
+\author{Magniadas Guillaume\\
+		ORNIACKI Thomas\\
+		COTREZ Leo\\
+		LEGOUEIX Nicolas\\
+		Tayebi Mahdi\\
+		}
+\date{}
+\begin{document}
+
+\maketitle
+
+\section{Magniadas Guillaume}
+
+Dans ce projet, je me suis principalement occupé de la gravité. Pour ce faire, j'ai découpé l'entièreté des opérations de détection et de suppression de lignes pleines ainsi que de gravité en plusieurs fonctions.\\
+Des fonctions de détections qui s'occupent de détecter une ligne ou une colonne pleine, des fonctions de suppression, supprimant ces dernières, et une fonction de gravité, qui s'occupe du décalage de toutes les cases en fonction des lignes/colonnes précédemment supprimé.
+Le tout était appelé par une fonction coeur qui s'occupe par la suite de chaque appel, la fonction update.\\
+J'ai ensuite divisé la détection et la suppression en deux fonctions, une pour les colonnes et une pour les lignes dans l'objectif de simplifier la lecture du code, je les ai factorisé en 1 fonction chacune, detect, et delete, s'occupant chacune à la fois des colonnes et des lignes.\\
+Ensuite pour s'assurer au fur et à mesure des maintenances du projet du bon fonctionnement de ces fonctions, j'ai ajouté une fonction de test pour qui s'occupent de remplir plusieurs fois des lignes et colonnes entières et qui fait appel à update dessus.
+
+\section{Orniacki Thomas}
+Le code dans sa première version comportait, pour la création de ses pièces, des fonctions distinctes pour la création de chacunes de ses pièces. J'ai ainsi réalisé la factorisation de ces fonctions, auparavant indépendantes bien que réalisant des tâches similaires, cette factorisation a quelques avantages qui seront énoncés après l'explication de la mise en oeuvre.\\
+Dans le but d'assembler ces fonctions de création de pièces afin d'en écrire une unique, j'ai commencé par regrouper les codes dans une même fonction. Une fois les redondances de variables simplifiées, j'ai remplacé le switch qui appelait les différentes fonctions selon un nombre aléatoire donné, par le code de génération directement ainsi les appels fonctions inutiles ont été supprimés ainsi que certaines variables devenues superflues.\\
+Les points avantageux de cette réalisation tiennent avant tout de l'optimisation, mais également de simplification ainsi la création de pièces est clairement identifiable et n'est plus fragmentaire augmentant d'autant la lisibilité du code. La suppression de variables profite inévitablement à un allègement de la mémoire. Le dernier atout et non le moindre, est la réduction de la charge de travail nécessaire pour l'ajout de nouveaux modèles de pièces. Par conséquent, j'ai donc aisément pu ajouter deux nouvelles pièces en forme de \emph{X}.
+
+\section{Legoueix Nicolas}
+
+Ayant codé la partie génération de pièces (container.c), j'ai essayé de trouver comment on pouvait efficacement mes pièces. Les collisions ayant déjà été testées par Léo, je me suis intéressé au placement des pièces sur une zone de jeu. \\
+Afin de vérifier leur bon placement, j'ai implémenté la fonction \textit{test\_Placement()} qui pose 500 pièces générées aléatoirement sur une zone de jeu fictive. Une boucle \textit{for} parcours ensuite cette zone de jeu et compare les données trouvées sur la zone de jeu aux données que la pièce est sensée contenir. On peut alors voire si un problème est survenu lors de la pose de la pièce. On répète l'opération une centaine de fois pour s'assurer d'avoir testé la fonction un nombre de fois suffisant pour avoir placé toutes les pièces plusieurs fois. Ainsi, si le test est concluant, on ne devrait pas avoir d'erreurs lors de la phase de jeu.\\
+Si une erreur est détectée, j'en notifie l'utilisateur via le terminal via un message d'erreur qui dit au bout de combien de test une erreur est survenue.\\
+Le test est déclenchable en appelant l'executable avec l'argument 3.
+
+\section{Cotrez Leo}
+
+
+\section{Tayebi Said Mahdi}
+Dans ce projet , je me suis occupé de la rotation des pieces , une tache facultative mais qui rend le jeu plus interessant , j'ai du deja travaillé sur une base donneé par mes camamarades qui avaient defini les pieces sous forme de vecteur ,je devais travailler sur 3 pieces qui etaient les U , les L,et les pieces de deux sur une ligne les deux autres pieces ne pouvaient faire de rotation . 
+\newline J'avais comme contrainte de ne pas creer de nouvelles pieces , ce que je n'ai pas reussi a faire juste a cause des deux pieces sur une ligne du au fait qu'il prenait toutes la place qui leur etaient alloues mais que je ne pouvais changer ces caracteritiques qu'on creont une nouvelle piece 
+  j'ai fait en sorte de creer une fonction miroir qui me permet de prendre une piece et de rendre son miroir , ce qui n'avait d'effet que sur les L pour les modifier .
+J'ai reussi a regler le probleme apres avoir compris l'ordonnoncement des pieces et leur quelque notions en mathematiques , apres avoir compris que le plus simple serait de decouper le programme en deux un pour les matrices carre qui peuvent etre traite a l'aide de mathematiques , et un pour les matrices qui n'etaient pas carres qui furent traite a l'aide de partie specifique a eux <;
+pour la factorisation  vu que je n'avais que trois fonction a utiliser une fonction pour ls miroir , une autre pour le swap ( qu est facultative mais plus simple que repeter a chauqe fois un meme bout de code ) uniquement le  swap me fut utile , le parcours de boucle de boucle de maniere different je vois diivilement comment je pourrais le factorisé .
+ Pour la phase de test j'ai fait une fonction qui fait des rotations toutes les deux secondes , pour l'iplemente sans qu'elle ne retarde le jeu un thread fut necessaire pour qu'il s'execute sans gener le programme c'est juste une fonction qui fait des rotation tous les n temps qu'on veut
+
+\end{document}

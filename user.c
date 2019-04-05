@@ -109,10 +109,6 @@ void miroir(container*piece)
 }
 
 void rotation(container *piece) {
-    for (int i = 0; i < piece->size; i++) {
-        printf("%d ", piece->data[i]);
-    }
-    printf("\n %d\n", piece->len);
     container tmp;
     initContainer(piece->size/piece->len,piece->len,&tmp);
 
@@ -121,11 +117,6 @@ void rotation(container *piece) {
             tmp.data[(((piece->len-1)-i)*tmp.len)+j] = piece->data[(j*piece->len)+i];
         }
     }
-
-    for (int i = 0; i < tmp.size; i++) {
-        printf("%d ", tmp.data[i]);
-    }
-    printf("\n %d\n", tmp.len);
     for (int i = 0; i < piece->size; i++) {
         piece->data[i] = tmp.data[i];
     }
