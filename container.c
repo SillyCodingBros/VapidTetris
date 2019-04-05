@@ -116,7 +116,7 @@ void test_checkCollision(int fill) {
 
 void test_Placement(void){
 	container grid, piece;
-	int nb_test, i, j;
+	int nb_test, i;
 	for(nb_test = 0; nb_test< 100; nb_test++){
 		piece = randomPiece();
 		//piece = createPiece(2); // POUR DEMO 
@@ -125,7 +125,7 @@ void test_Placement(void){
 		//grid.data[0] = 5; // POUR DEMO
 		for(i = 0; i < piece.size; i ++){
 			if(grid.data[i] != piece.data[i]){
-				printf("WRONG placement detected at test number %d, position %d, %d \n", nb_test, i, j);
+				printf("WRONG placement detected at test number %d, position %d\n", nb_test, i);
 			}
 		}
 	}
