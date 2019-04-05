@@ -117,7 +117,7 @@ void test_checkCollision(int fill) {
 void test_Placement(void){
 	container grid, piece;
 	int nb_test, i;
-	for(nb_test = 0; nb_test< 100; nb_test++){
+	for(nb_test = 0; nb_test< 500; nb_test++){
 		piece = randomPiece();
 		//piece = createPiece(2); // POUR DEMO 
 		initContainer(piece.len, (piece.size / piece.len), &grid);
